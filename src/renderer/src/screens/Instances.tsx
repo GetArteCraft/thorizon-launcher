@@ -91,8 +91,7 @@ export function InstancesScreen() {
     setHide(profile.launch?.hideLauncherOnPlay ?? settings.hideLauncherOnPlay);
   };
 
-  const startBuild = (profile: Profile) => {
-    if (!api) return;
+  const startBuild = (profile: Profile) => {    if (!api) return;
     setBuilding(profile);
     startNative(profile.id);
     void api
@@ -105,6 +104,17 @@ export function InstancesScreen() {
         finishNative(profile.id, false);
         toast("error", errorText(error, locale));
       });
+  };
+
+  const backup = async (profile: Profile) => {
+    if (!api) return;
+    try {
+      const result = await api.backupsCreate(profile.id);
+      if (!result) toast("info", t("instances.backupEmpty"));
+      else toast("success", t("instances.backupDone", { files: result.files, size: formatBytes(result.bytes) }));
+    } catch (error) {
+      toast("error", errorText(error, locale));
+    }
   };
 
   const saveLaunch = async () => {
@@ -201,6 +211,9 @@ export function InstancesScreen() {
                   </Button>
                   <Button size="sm" icon="monitor" onClick={() => openLaunch(profile)}>
                     {t("instances.launch")}
+                  </Button>
+                  <Button size="sm" icon="folder" onClick={() => void backup(profile)}>
+                    {t("instances.backup")}
                   </Button>
                   {profile.source === "cli" ? (
                     <Button size="sm" icon="cpu" onClick={() => startBuild(profile)}>

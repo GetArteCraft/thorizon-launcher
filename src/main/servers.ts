@@ -1,5 +1,5 @@
 import { app } from "electron";
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { createConnection } from "node:net";
@@ -8,6 +8,7 @@ import type { WebContents } from "electron";
 import { runCli } from "./cli";
 import { getSettings } from "./settings";
 import { log } from "./logger";
+import { mapPort, unmapPort } from "./upnp";
 import type { AddServerInput, ServerEntry, ServerPing } from "../shared/types";
 
 function serversFile(): string {
@@ -107,6 +108,8 @@ export async function pingAndStore(id: string): Promise<ServerEntry | null> {
 interface RunningServer {
   id: string;
   child: ChildProcess | null;
+  port: number;
+  upnp: boolean;
 }
 
 let running: RunningServer | null = null;
@@ -115,23 +118,60 @@ export function serverIsRunning(): string | null {
   return running?.id ?? null;
 }
 
-export async function startServer(id: string, sender: WebContents): Promise<void> {
+async function backupServer(dir: string, keep: number): Promise<void> {
+  const world = join(dir, "world");
+  if (!existsSync(world)) return;
+  const backups = join(dir, "backups");
+  const target = join(backups, new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19));
+  await mkdir(target, { recursive: true });
+  await cp(world, join(target, "world"), { recursive: true, force: true });
+  const entries = await readdir(backups, { withFileTypes: true }).catch(() => []);
+  const dirs = entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
+  for (const name of dirs.slice(0, Math.max(0, dirs.length - keep))) {
+    await rm(join(backups, name), { recursive: true, force: true }).catch(() => undefined);
+  }
+  log("info", "servers", `backup ${target}`);
+}
+
+export async function startServer(id: string, sender?: WebContents): Promise<void> {
   if (running) throw new Error("E_BUSY");
   const servers = await readServers();
   const server = servers.find((item) => item.id === id);
   if (!server) throw new Error("E_NOT_FOUND");
-  if (!getSettings().serverConsole) {
-    // консоль просто не показываем, сервер всё равно работает
-  }
+  const settings = getSettings();
 
   const dir = join(app.getPath("userData"), "servers", id.replace(/[^a-z0-9._-]+/gi, "_"));
   await mkdir(dir, { recursive: true });
-  running = { id, child: null };
+  await writeFile(
+    join(dir, "server.properties"),
+    [
+      `server-port=${server.port || settings.portFrom}`,
+      `white-list=${settings.whitelist}`,
+      "online-mode=true",
+      `motd=THorizon ${server.name}`,
+      "",
+    ].join("\n"),
+    "utf8",
+  );
+  if (settings.autoBackup) await backupServer(dir, settings.backupsToKeep);
+
+  running = { id, child: null, port: server.port || settings.portFrom, upnp: settings.upnp };
 
   const send = (line: string) => {
-    if (!sender.isDestroyed()) sender.send("server:line", { id, line });
+    if (sender && !sender.isDestroyed()) sender.send("server:line", { id, line });
+    else log("info", "servers", line);
   };
   send(`Starting server for ${server.name} on ${server.host}:${server.port}`);
+
+  if (settings.upnp) {
+    send("UPnP: asking the router for a TCP mapping…");
+    const mapping = await mapPort(server.port || settings.portFrom, `THorizon ${server.name}`);
+    send(
+      mapping.ok
+        ? `UPnP: ${mapping.message}${mapping.externalIp ? ` (external ${mapping.externalIp})` : ""}`
+        : `UPnP: ${mapping.message}. Forward TCP ${server.port || settings.portFrom} manually, or use Radmin VPN / Tailscale.`,
+    );
+  }
 
   const result = await runCli(["server", "--dir", dir, "--accept-eula"], {
     onChild: (child) => {
@@ -139,13 +179,24 @@ export async function startServer(id: string, sender: WebContents): Promise<void
     },
     onLine: send,
   });
+  const mappedPort = running?.port;
+  const usedUpnp = running?.upnp;
   running = null;
+  if (usedUpnp && mappedPort) void unmapPort(mappedPort);
   send(result.ok ? "Server stopped" : `Server failed: ${result.stderr.trim() || result.error}`);
 }
 
 export function stopServer(): boolean {
   if (!running) return false;
-  running.child?.kill();
+  const { child, port, upnp } = running;
+  child?.kill();
   running = null;
+  if (upnp) void unmapPort(port);
+  return true;
+}
+
+export function serverCommand(command: string): boolean {
+  if (!running?.child?.stdin) return false;
+  running.child.stdin.write(`${command.replace(/[\r\n]+/g, " ")}\n`);
   return true;
 }

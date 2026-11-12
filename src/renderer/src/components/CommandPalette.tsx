@@ -90,7 +90,15 @@ export function CommandPalette() {
               ? t("rp.title")
               : t("mods.title"),
         icon: project.kind === "shader" ? ("sparkles" as IconName) : ("cube" as IconName),
-        run: () => openDetail(project.kind === "shader" ? "shader" : "mod", project.id),
+        run: () =>
+          openDetail(
+            project.kind === "shader"
+              ? "shader"
+              : project.kind === "resourcepack"
+                ? "resourcepack"
+                : "mod",
+            project.id,
+          ),
       }))
       .filter(
         (result) =>

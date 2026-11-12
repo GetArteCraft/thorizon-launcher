@@ -5,6 +5,7 @@ import { join } from "node:path";
 import type { WebContents } from "electron";
 import { getProject } from "./catalog";
 import { profilesRoot } from "./profiles";
+import { getSettings } from "./settings";
 import { log } from "./logger";
 import { bump } from "./stats";
 
@@ -50,6 +51,8 @@ export async function installProjectFile(
   const total = Number(response.headers.get("content-length") ?? file.size ?? 0);
   const chunks: Buffer[] = [];
   let received = 0;
+  const limit = getSettings().speedLimitKbps * 1024 / 8;
+  const started = Date.now();
 
   if (response.body) {
     const reader = response.body.getReader();
@@ -62,6 +65,11 @@ export async function installProjectFile(
         received += chunk.length;
         const percent = total > 0 ? Math.min(95, Math.round((received / total) * 90) + 2) : 45;
         send(percent, "downloading");
+        if (limit > 0) {
+          const targetMs = (received / limit) * 1000;
+          const wait = targetMs - (Date.now() - started);
+          if (wait > 0) await new Promise((resolve) => setTimeout(resolve, Math.min(wait, 1000)));
+        }
       }
     }
   } else {

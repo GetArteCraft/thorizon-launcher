@@ -69,24 +69,39 @@ function ProjectDrawer({ project }: { project: RegistryProject }) {
   const tone = toneForKind(project.kind);
   const usedBy = project.kind === "mod" || project.kind === "native-mod" ? packsWithMod(project.id) : [];
   const paragraphs = project.description.split(/\n{2,}/).filter(Boolean);
-  const installable = project.kind === "shader" || project.kind === "resourcepack";
+  const installable = project.kind === "shader" || project.kind === "resourcepack" || project.kind === "mod" || project.kind === "native-mod";
+  const [line, setLine] = useState("");
 
   useEffect(() => {
     if (!api) return;
-    return api.onProjectProgress((payload) => {
+    const offProgress = api.onProjectProgress((payload) => {
       if (payload.projectId !== project.id) return;
       setProgress(payload.percent);
       if (payload.phase === "done") setInstalling(false);
     });
+    const offMods = api.onModsLine((payload) => {
+      if (payload.id === project.id) setLine(payload.line);
+    });
+    return () => {
+      offProgress();
+      offMods();
+    };
   }, [project.id]);
 
   const install = async () => {
     if (!api || !profileId) return;
     setInstalling(true);
     setProgress(2);
+    setLine("");
     try {
-      const result = await api.projectInstall(project.id, profileId);
-      toast("success", t("mods.installed", { name: result.name }));
+      if (project.kind === "mod" || project.kind === "native-mod") {
+        const result = await api.modsInstall(project.id, profileId);
+        if (!result.ok) throw new Error(result.stderr || result.error || "E_INSTALL");
+        toast("success", t("mods.installed", { name: project.name }));
+      } else {
+        const result = await api.projectInstall(project.id, profileId);
+        toast("success", t("mods.installed", { name: result.name }));
+      }
     } catch (error) {
       toast("error", errorText(error, locale));
     } finally {
@@ -147,7 +162,15 @@ function ProjectDrawer({ project }: { project: RegistryProject }) {
                   {t("common.install")}
                 </Button>
               </div>
-              {installing ? <ProgressBar value={progress} /> : null}
+              {installing ? (
+                <>
+                  <ProgressBar
+                    value={project.kind === "mod" || project.kind === "native-mod" ? 100 : progress}
+                    indeterminate={project.kind === "mod" || project.kind === "native-mod"}
+                  />
+                  {line ? <code className="drawer-install__line">{line}</code> : null}
+                </>
+              ) : null}
               <p className="dim small">{t("shaders.installHint")}</p>
             </>
           )}

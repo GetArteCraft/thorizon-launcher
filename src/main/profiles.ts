@@ -6,6 +6,7 @@ import { getSettings } from "./settings";
 import { runCli } from "./cli";
 import { log } from "./logger";
 import { bump } from "./stats";
+import { maybeBackup } from "./backups";
 import type { LaunchConfig, Profile } from "../shared/types";
 
 export function profilesRoot(): string {
@@ -182,6 +183,42 @@ export interface PlayResult {
   error?: string;
 }
 
+async function applyLaunchOptions(profile: Profile): Promise<void> {
+  const settings = getSettings();
+  const config = profile.launch ?? {
+    launchMode: settings.launchMode,
+    launchWidth: settings.launchWidth,
+    launchHeight: settings.launchHeight,
+    launchArgs: settings.launchArgs,
+    hideLauncherOnPlay: settings.hideLauncherOnPlay,
+  };
+  const home = join(profile.path, "home");
+  if (!existsSync(home)) return;
+
+  const file = join(home, "options.txt");
+  let lines: string[] = [];
+  try {
+    lines = (await readFile(file, "utf8")).split(/\r?\n/);
+  } catch {
+    lines = [];
+  }
+
+  const values = new Map<string, string>();
+  for (const line of lines) {
+    const index = line.indexOf(":");
+    if (index > 0) values.set(line.slice(0, index), line.slice(index + 1));
+  }
+  values.set("overrideWidth", String(config.launchWidth));
+  values.set("overrideHeight", String(config.launchHeight));
+  values.set("fullscreen", config.launchMode === "fullscreen" ? "true" : "false");
+
+  await writeFile(
+    file,
+    `${[...values.entries()].map(([key, value]) => `${key}:${value}`).join("\n")}\n`,
+    "utf8",
+  );
+}
+
 /**
  * Игра запускается официальным CLI: он владеет аккаунтом и версией игры.
  * Локальный профиль без установленной сборки честно отказывает.
@@ -192,6 +229,9 @@ export async function playProfile(id: string): Promise<PlayResult> {
   if (profile.source !== "cli") {
     throw new Error("E_NOT_INSTALLED");
   }
+
+  await applyLaunchOptions(profile);
+  await maybeBackup(profile.id);
 
   const result = await runCli(["modpack", "play", profile.packId ?? id]);
   if (result.ok) {

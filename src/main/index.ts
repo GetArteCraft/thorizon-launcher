@@ -9,7 +9,9 @@ import { registerIpc } from "./ipc";
 import { checkEnv } from "./cli";
 import { createTray, iconPath, rebuildTray, setTrayStatus, type TrayActions } from "./tray";
 import { applyAutostart, isOnBattery } from "./autostart";
-import { onUpdateState } from "./updater";
+import { onUpdateState, startUpdateLoop } from "./updater";
+import { listServers, startServer } from "./servers";
+import { listProfiles, playProfile } from "./profiles";
 import { log, setLogLevel } from "./logger";
 
 if (process.env.THORIZON_USER_DATA) {
@@ -194,6 +196,9 @@ if (singleInstance) {
 
     if (process.argv.includes("--minimized")) saveSettings({ startMinimized: true });
 
+    const stopUpdates = startUpdateLoop();
+    app.on("before-quit", stopUpdates);
+
     const env = await checkEnv();
     if (env.cli) {
       log("info", "app", `CLI ${env.cliVersion ?? "unknown"} at ${env.cliPath}`);
@@ -201,8 +206,31 @@ if (singleInstance) {
       log("warn", "app", "CLI not found; catalog works, installs and play are disabled");
     }
 
-    if (getSettings().launchGameOnStart && env.cli) {
-      win?.webContents.send("navigate", "home");
+    if (env.cli) {
+      const boot = getSettings();
+      if (boot.autostartServer) {
+        const servers = await listServers();
+        const last = servers[0];
+        if (last) {
+          log("info", "app", `autostart server ${last.id}`);
+          void startServer(last.id);
+        }
+      }
+      if (boot.launchGameOnStart) {
+        const profiles = await listProfiles();
+        const profile =
+          profiles.find((item) => item.id === boot.defaultProfile) ??
+          profiles.find((item) => item.source === "cli");
+        if (profile) {
+          log("info", "app", `launchGameOnStart ${profile.id}`);
+          if (boot.hideLauncherOnPlay) win?.hide();
+          void playProfile(profile.id)
+            .catch((error) => log("warn", "app", `startup play: ${String(error)}`))
+            .finally(() => {
+              if (boot.hideLauncherOnPlay) showWindow();
+            });
+        }
+      }
     }
   });
 }

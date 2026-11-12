@@ -28,6 +28,8 @@ export function ServersScreen() {
   const consoleServer = useUi((state) => state.consoleServer);
   const consoleLines = useUi((state) => state.consoleLines);
   const setConsole = useUi((state) => state.setConsole);
+  const appendConsole = useUi((state) => state.appendConsole);
+  const serverConsole = useUi((state) => state.settings.serverConsole);
 
   const [adding, setAdding] = useState(false);
   const [name, setName] = useState("");
@@ -38,6 +40,7 @@ export function ServersScreen() {
   const [busy, setBusy] = useState(false);
   const [pinging, setPinging] = useState<string | null>(null);
   const [removing, setRemoving] = useState<ServerEntry | null>(null);
+  const [command, setCommand] = useState("");
   const logRef = useRef<HTMLPreElement>(null);
 
   useEffect(() => {
@@ -103,6 +106,24 @@ export function ServersScreen() {
     void api?.serversStop();
   };
 
+  const sendCommand = async () => {
+    if (!api || !command.trim()) return;
+    const line = command.trim();
+    appendConsole(`> ${line}`);
+    setCommand("");
+    const ok = await api.serversCommand(line);
+    if (!ok) toast("error", t("servers.consoleEmpty"));
+  };
+
+  const copyAddress = async (server: ServerEntry) => {
+    try {
+      await navigator.clipboard.writeText(`${server.host}:${server.port}`);
+      toast("success", t("servers.copied"));
+    } catch {
+      toast("error", t("servers.copy"));
+    }
+  };
+
   const online = useMemo(() => servers.filter((server) => server.ping?.online).length, [servers]);
 
   return (
@@ -161,6 +182,9 @@ export function ServersScreen() {
                   <Button size="sm" icon="pulse" onClick={() => void ping(server)} disabled={pinging === server.id}>
                     {t("servers.ping")}
                   </Button>
+                  <Button size="sm" icon="link" onClick={() => void copyAddress(server)}>
+                    {t("servers.copy")}
+                  </Button>
                   {isRunning ? (
                     <Button size="sm" variant="danger" icon="close" onClick={stop}>{t("servers.stop")}</Button>
                   ) : (
@@ -174,17 +198,35 @@ export function ServersScreen() {
         </div>
       )}
 
-      <Panel
-        title={t("servers.console")}
-        action={running ? <Button size="sm" variant="danger" icon="close" onClick={stop}>{t("servers.stop")}</Button> : undefined}
-      >
-        {running || consoleLines.length > 0 ? (
-          <pre className="console" ref={logRef}>{consoleLines.join("\n") || t("servers.consoleEmpty")}</pre>
-        ) : (
-          <p className="dim">{t("servers.consoleEmpty")}</p>
-        )}
-        {!env?.cli ? <p className="dim small">{t("servers.noCli")}</p> : null}
-      </Panel>
+      {serverConsole ? (
+        <Panel
+          title={t("servers.console")}
+          action={running ? <Button size="sm" variant="danger" icon="close" onClick={stop}>{t("servers.stop")}</Button> : undefined}
+        >
+          {running || consoleLines.length > 0 ? (
+            <pre className="console" ref={logRef}>{consoleLines.join("\n") || t("servers.consoleEmpty")}</pre>
+          ) : (
+            <p className="dim">{t("servers.consoleEmpty")}</p>
+          )}
+          {running ? (
+            <div className="console-input">
+              <TextInput
+                value={command}
+                onChange={(event) => setCommand(event.target.value)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") void sendCommand();
+                }}
+                placeholder={t("servers.commandPlaceholder")}
+                aria-label={t("servers.commandPlaceholder")}
+              />
+              <Button size="sm" icon="chevronRight" onClick={() => void sendCommand()}>
+                {t("servers.send")}
+              </Button>
+            </div>
+          ) : null}
+          {!env?.cli ? <p className="dim small">{t("servers.noCli")}</p> : null}
+        </Panel>
+      ) : null}
 
       <Modal
         open={adding}
@@ -221,6 +263,7 @@ export function ServersScreen() {
             <span>{t("servers.whitelist")}</span>
             <Toggle checked={whitelist} onChange={setWhitelist} label={t("servers.whitelist")} />
           </div>
+          <p className="field__hint field--wide">{t("servers.whitelistHint")}</p>
         </div>
       </Modal>
 

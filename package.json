@@ -1,7 +1,7 @@
 {
   "name": "thorizon-launcher",
   "productName": "THorizon",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "THorizon launcher — packs, mods, shaders and servers for Horizon in one window",
   "author": "THorizon",
   "license": "MIT",
@@ -17,6 +17,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run",
     "smoke": "npm run build && node scripts/smoke.mjs",
+    "smoke:logic": "npm run build && node scripts/logic-smoke.mjs",
     "dist": "npm run build && electron-builder",
     "dist:win": "npm run build && electron-builder --win nsis",
     "dist:linux": "npm run build && electron-builder --linux appimage deb"

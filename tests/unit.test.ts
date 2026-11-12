@@ -6,6 +6,7 @@ import registryJson from "../src/shared/data/registry.json";
 import { CLUSTERS, PAIRS, ID_PATTERN, POLICY_BLOCKED, tomlManifest, validateSelection } from "../src/shared/editor";
 import { DEFAULT_SETTINGS, normalizeSettings } from "../src/shared/settings";
 import { parseAccount, parseVersions } from "../src/shared/cli-parse";
+import { parseControlUrl } from "../src/main/upnp";
 import { en, ru } from "../src/renderer/src/i18n/messages";
 import type { Catalog, Registry, RegistryProject } from "../src/shared/types";
 
@@ -165,6 +166,31 @@ describe("editor validation", () => {
     expect(toml).not.toContain("[[mods]]");
     expect(ID_PATTERN.test("clean_pack")).toBe(true);
     expect(ID_PATTERN.test("Clean-Pack")).toBe(false);
+  });
+});
+
+describe("UPnP", () => {
+  it("resolves the WANIPConnection control URL", () => {
+    const xml = [
+      "<root><device><serviceList><service>",
+      "<serviceType>urn:schemas-upnp-org:service:WANIPConnection:1</serviceType>",
+      "<controlURL>/ctl/IPConn</controlURL>",
+      "</service></serviceList></device></root>",
+    ].join("");
+    expect(parseControlUrl(xml, "http://192.168.1.1:5000/desc.xml")?.controlUrl).toBe(
+      "http://192.168.1.1:5000/ctl/IPConn",
+    );
+  });
+
+  it("falls back to WANPPPConnection and rejects junk", () => {
+    const xml = [
+      "<service>",
+      "<serviceType>urn:schemas-upnp-org:service:WANPPPConnection:1</serviceType>",
+      "<controlURL>ctl/ppp</controlURL>",
+      "</service>",
+    ].join("");
+    expect(parseControlUrl(xml, "http://10.0.0.1:1234/root.xml")?.service).toContain("WANPPPConnection");
+    expect(parseControlUrl("not xml", "http://x/")).toBeNull();
   });
 });
 

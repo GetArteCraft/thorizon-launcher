@@ -129,7 +129,7 @@ export function DiagnosticsScreen() {
             </div>
             <div className="diag-stat">
               <span className="diag-stat__icon"><Icon name="globe" size={18} /></span>
-              <b>{summary?.app.platform ?? process.platform}</b>
+              <b>{summary?.app.platform ?? "—"}</b>
               <span>{t("diagnostics.platform")}</span>
             </div>
           </div>

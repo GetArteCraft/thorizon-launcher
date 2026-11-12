@@ -81,6 +81,7 @@ export function SettingsScreen() {
       setSettings(next);
       setSaved(true);
       setTimeout(() => setSaved(false), 1600);
+      if ("hardwareAcceleration" in patch) toast("info", t("settings.restartNeeded"));
     } catch (error) {
       toast("error", errorText(error, locale));
     }

@@ -4,7 +4,7 @@ import { checkEnv, runCli } from "./cli";
 import { getSettings, resetSettings, saveSettings } from "./settings";
 import { setLogLevel } from "./logger";
 import { cancelInstall, installPack } from "./install";
-import { addServer, listServers, pingAndStore, removeServer, startServer, stopServer } from "./servers";
+import { addServer, listServers, pingAndStore, removeServer, serverCommand, startServer, stopServer } from "./servers";
 import { createProfile, deleteProfile, listProfiles, openProfile, playProfile, profilesRoot, updateProfileLaunch } from "./profiles";
 import { importFiles, listLocal, pickAndImport, removeLocal, revealMods, toggleLocal } from "./localFiles";
 import {
@@ -18,7 +18,8 @@ import {
 import { exportPack } from "./editor";
 import { installProjectFile } from "./projectInstall";
 import { getStats } from "./stats";
-import { checkForUpdates, downloadUpdate, installUpdate, updateState } from "./updater";
+import { createBackup } from "./backups";
+import { checkForUpdates, configureUpdater, downloadUpdate, installUpdate, startUpdateLoop, updateState } from "./updater";
 import { log, readLog } from "./logger";
 import type { AddServerInput, EditorManifest, Settings } from "../shared/types";
 
@@ -100,6 +101,15 @@ export function registerIpc(context: IpcContext): void {
     const next = saveSettings(patch ?? {});
     setLogLevel(next.logLevel);
     if ("autostart" in (patch ?? {}) || "autostartMinimized" in (patch ?? {})) applyAutostart(next);
+    if (
+      "updateChannel" in (patch ?? {}) ||
+      "updateAutoDownload" in (patch ?? {}) ||
+      "updateInstallOnExit" in (patch ?? {}) ||
+      "updateCheckHours" in (patch ?? {})
+    ) {
+      configureUpdater(next);
+      startUpdateLoop();
+    }
     context.onSettingsChanged();
     return next;
   });
@@ -128,6 +138,7 @@ export function registerIpc(context: IpcContext): void {
   );
   ipcMain.handle("profiles:delete", (_event, id: string) => deleteProfile(id));
   ipcMain.handle("profiles:open", (_event, id: string) => openProfile(id));
+  ipcMain.handle("backups:create", (_event, profileId: string) => createBackup(profileId, true));
   ipcMain.handle("profiles:update-launch", (_event, id: string, launch: Parameters<typeof updateProfileLaunch>[1]) =>
     updateProfileLaunch(id, launch),
   );
@@ -167,6 +178,20 @@ export function registerIpc(context: IpcContext): void {
     void installPack(id, event.sender);
   });
   ipcMain.handle("install:cancel", () => cancelInstall());
+  ipcMain.handle("mods:install", async (event, modId: string, profileId: string) => {
+    const profiles = await listProfiles();
+    const profile = profiles.find((item) => item.id === profileId);
+    if (!profile) throw new Error("E_NOT_FOUND");
+    if (profile.source !== "cli") throw new Error("E_NOT_INSTALLED");
+    return runCli(
+      ["mods", "install", "--source", "horizon", modId, "--instance", profile.packId ?? profile.id],
+      {
+        onLine: (line) => {
+          if (!event.sender.isDestroyed()) event.sender.send("mods:line", { id: modId, line });
+        },
+      },
+    );
+  });
 
   ipcMain.handle("local:list", (_event, profileId: string) => listLocal(profileId));
   ipcMain.handle("local:pick", (_event, profileId: string) => pickAndImport(profileId));
@@ -193,6 +218,7 @@ export function registerIpc(context: IpcContext): void {
     }
   });
   ipcMain.handle("servers:stop", () => stopServer());
+  ipcMain.handle("servers:command", (_event, command: string) => serverCommand(command));
 
   ipcMain.handle("logs:read", async (_event, source: "app" | "cli", lines = 400) => {
     if (source === "cli") {

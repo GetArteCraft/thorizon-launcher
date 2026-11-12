@@ -46,10 +46,15 @@ export function runCli(args: string[], options: RunOptions = {}): Promise<CliRes
     };
 
     let child: ChildProcess;
+    const script = /\.(mjs|cjs|js)$/i.test(command);
     try {
-      child = spawn(command, args, {
+      child = spawn(script ? process.execPath : command, script ? [command, ...args] : args, {
         windowsHide: true,
-        env: { ...process.env, ...options.env },
+        env: {
+          ...process.env,
+          ...(script ? { ELECTRON_RUN_AS_NODE: "1" } : {}),
+          ...options.env,
+        },
       });
     } catch (error) {
       finish({ ok: false, code: null, stdout: "", stderr: String(error), error: "E_SPAWN" });

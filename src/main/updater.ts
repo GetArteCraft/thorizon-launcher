@@ -1,7 +1,7 @@
 import { app } from "electron";
 import { getSettings } from "./settings";
 import { log } from "./logger";
-import type { UpdateState } from "../shared/types";
+import type { Settings, UpdateState } from "../shared/types";
 
 type Listener = (state: UpdateState) => void;
 
@@ -24,12 +24,43 @@ export function updateState(): UpdateState {
   return state;
 }
 
+export function configureUpdater(settings: Settings): void {
+  if (!autoUpdater) return;
+  autoUpdater.autoDownload = settings.updateAutoDownload;
+  autoUpdater.autoInstallOnAppQuit = settings.updateInstallOnExit;
+  autoUpdater.channel = settings.updateChannel;
+  autoUpdater.allowPrerelease = settings.updateChannel === "beta";
+}
+
+/** Проверка при старте и раз в N часов. В dev ничего не делает. */
+let stopLoop: (() => void) | null = null;
+
+export function startUpdateLoop(): () => void {
+  stopLoop?.();
+  if (!app.isPackaged) {
+    stopLoop = null;
+    return () => undefined;
+  }
+  const run = () => {
+    void checkForUpdates();
+  };
+  const initial = setTimeout(run, 10_000);
+  const interval = setInterval(run, Math.max(1, getSettings().updateCheckHours) * 3_600_000);
+  const stop = () => {
+    clearTimeout(initial);
+    clearInterval(interval);
+    if (stopLoop === stop) stopLoop = null;
+  };
+  stopLoop = stop;
+  return stop;
+}
+
 async function loadUpdater(): Promise<typeof import("electron-updater").autoUpdater | null> {
   if (autoUpdater) return autoUpdater;
   try {
     const module = await import("electron-updater");
     autoUpdater = module.autoUpdater;
-    autoUpdater.autoDownload = getSettings().updateAutoDownload;
+    configureUpdater(getSettings());
     autoUpdater.on("checking-for-update", () => setState({ status: "checking" }));
     autoUpdater.on("update-available", (info) =>
       setState({ status: "available", version: info.version, notes: typeof info.releaseNotes === "string" ? info.releaseNotes : undefined }),
@@ -60,8 +91,7 @@ export async function checkForUpdates(): Promise<UpdateState> {
     setState({ status: "error", message: "Updater is not available." });
     return state;
   }
-  updater.channel = getSettings().updateChannel;
-  updater.allowPrerelease = getSettings().updateChannel === "beta";
+  configureUpdater(getSettings());
   await updater.checkForUpdates().catch((error: unknown) => {
     log("warn", "updater", String(error));
     setState({ status: "error", message: "Update check failed." });

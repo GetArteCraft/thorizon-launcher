@@ -2,7 +2,7 @@ import { useLayoutEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-type Kind = "grass" | "dirt" | "stone" | "sand" | "ore" | "trunk" | "leaf";
+type Kind = "grass" | "dirt" | "stone" | "sand" | "ore" | "trunk" | "leaf" | "flower";
 
 interface Block {
   x: number;
@@ -19,6 +19,7 @@ const PALETTE: Record<Kind, string[]> = {
   ore: ["#5ee6a8"],
   trunk: ["#5a3a24", "#65422a"],
   leaf: ["#3f8f4a", "#4a9c55", "#357f40"],
+  flower: ["#ff8fb3", "#ffd166", "#f4f1de", "#b49bff"],
 };
 
 function mulberry32(seed: number): () => number {
@@ -60,6 +61,14 @@ function buildIsland(): { blocks: Block[]; pond: { x: number; z: number; y: numb
         const oreY = Math.max(-2, height - 2);
         const ore = blocks.find((block) => block.x === x && block.z === z && block.y === oreY);
         if (ore) ore.kind = "ore";
+      }
+      if (!inPond && rand() < 0.06) {
+        blocks.push({
+          x,
+          y: height + 0.62,
+          z,
+          kind: "flower",
+        });
       }
     }
   }
@@ -122,7 +131,7 @@ function Instances({ blocks, kind }: { blocks: Block[]; kind: Kind }) {
     const palette = PALETTE[kind];
     blocks.forEach((block, index) => {
       dummy.position.set(block.x, block.y, block.z);
-      const scale = kind === "leaf" ? 0.94 : 0.985;
+      const scale = kind === "leaf" ? 0.94 : kind === "flower" ? 0.22 : 0.985;
       dummy.scale.setScalar(scale);
       dummy.rotation.set(0, 0, 0);
       dummy.updateMatrix();
@@ -142,7 +151,7 @@ function Instances({ blocks, kind }: { blocks: Block[]; kind: Kind }) {
     <instancedMesh ref={ref} args={[undefined, undefined, blocks.length]} frustumCulled={false}>
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial
-        roughness={emissive ? 0.45 : 0.92}
+        roughness={emissive ? 0.45 : kind === "flower" ? 0.6 : 0.92}
         metalness={emissive ? 0.25 : 0.02}
         flatShading
         emissive={emissive ? new THREE.Color("#2f8a63") : new THREE.Color("#000000")}
@@ -163,15 +172,13 @@ function Water({ pond, animate }: { pond: { x: number; z: number; y: number; r: 
     <mesh ref={ref} position={[pond.x, pond.y - 0.06, pond.z]} rotation-x={-Math.PI / 2}>
       <circleGeometry args={[pond.r * 0.94, 48]} />
       <meshPhysicalMaterial
-        color="#1d6f9e"
-        emissive="#0a2c3f"
-        emissiveIntensity={0.5}
+        color="#2a7fb8"
+        emissive="#0b2e42"
+        emissiveIntensity={0.35}
         transparent
         opacity={0.92}
-        roughness={0.22}
-        metalness={0.05}
-        clearcoat={0.4}
-        clearcoatRoughness={0.25}
+        roughness={0.75}
+        metalness={0}
       />
     </mesh>
   );
@@ -281,6 +288,7 @@ function Scene({ animate, quality }: { animate: boolean; quality: "high" | "low"
       ore: [],
       trunk: [],
       leaf: [],
+      flower: [],
     };
     for (const block of all) map[block.kind].push(block);
     return map;
@@ -300,6 +308,7 @@ function Scene({ animate, quality }: { animate: boolean; quality: "high" | "low"
         <Instances blocks={groups.ore} kind="ore" />
         <Instances blocks={groups.trunk} kind="trunk" />
         <Instances blocks={groups.leaf} kind="leaf" />
+        <Instances blocks={groups.flower} kind="flower" />
         <Water pond={pond} animate={animate} />
         <Crystals animate={animate} />
         <RuneRing animate={animate} />

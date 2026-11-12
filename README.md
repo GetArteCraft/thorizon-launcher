@@ -25,8 +25,9 @@ the archive.
 
 ```bash
 npm run typecheck    # tsc, strict, no any in app code
-npm test             # 18 vitest checks: settings, catalog, editor, CLI parsing, en/ru parity
-npm run smoke        # builds, launches Electron, 22 UI checks + screenshots in out/shots
+npm test             # 20 vitest checks: settings, catalog, editor, CLI parsing, UPnP, en/ru parity
+npm run smoke        # builds, launches Electron, 25 UI checks + screenshots in out/shots
+npm run smoke:logic  # mock CLI: install → profile → play → native build → mod install → backup → server
 npm run dist:win     # NSIS installer in release/
 npm run dist:linux   # AppImage + deb
 ```
@@ -38,12 +39,13 @@ Russian interface.
 ## What works without Horizon installed
 
 - the whole catalog (20 packs, 144 mods, 12 shaders, 2 resource packs), search and filters;
-- profiles: create, inspect, delete, per-profile launch options;
+- profiles: create, inspect, delete, per-profile launch options, backup now;
 - Library: import `.hmod` / `.hnmod` / `.hpack` / `.hshader` / `.zip`, enable/disable,
   move to trash, SHA-256 shown for every file;
 - pack editor: pick registry mods, catch cluster duplicates and half-installed pairs,
   export a TOML `.hpack` that Horizon accepts;
-- servers list with a real TCP check, console and start/stop through the CLI;
+- servers list with a real TCP check, interactive console, UPnP mapping, whitelist
+  and server.properties, start/stop through the CLI;
 - settings (window, tray, autostart, updates, graphics, launch, backups, privacy),
   diagnostic zip, update channel.
 

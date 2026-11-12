@@ -22,6 +22,7 @@ export const en: Dictionary = {
 
   "titlebar.minimize": "Minimize",
   "titlebar.maximize": "Maximize",
+  "titlebar.restore": "Restore",
   "titlebar.close": "Close",
 
   "common.loading": "Loading",
@@ -278,6 +279,11 @@ export const en: Dictionary = {
   "servers.checked": "Checked {time}",
   "servers.none": "Not checked yet",
   "servers.packPlaceholder": "campfire",
+  "servers.copy": "Copy address",
+  "servers.copied": "Address copied",
+  "servers.commandPlaceholder": "whitelist add <player>",
+  "servers.send": "Send",
+  "servers.whitelistHint": "Add players in the server console after it starts: whitelist add <player>.",
 
   "instances.title": "Instances",
   "instances.lead": "Each pack gets its own worlds, configs, screenshots and logs. Removing one leaves the others alone.",
@@ -304,6 +310,9 @@ export const en: Dictionary = {
   "instances.buildDone": "Native build finished",
   "instances.buildFailed": "Native build failed",
   "instances.buildRunning": "Building native mods…",
+  "instances.backup": "Back up now",
+  "instances.backupDone": "Backup: {files} files, {size}",
+  "instances.backupEmpty": "No saves to back up yet.",
 
   "library.title": "Library",
   "library.lead": "Your own files. Drop them into a profile, switch them on and off, and keep them through pack updates.",
@@ -441,6 +450,7 @@ export const en: Dictionary = {
   "settings.reset": "Reset all settings",
   "settings.resetBody": "Profiles and worlds are not touched.",
   "settings.savedToast": "Settings saved",
+  "settings.restartNeeded": "Restart the launcher to apply hardware acceleration.",
   "settings.openProfiles": "Open profiles folder",
   "settings.chooseFolder": "Choose folder",
   "settings.invalidArgs": "Arguments cannot contain quotes or percent signs.",
@@ -528,6 +538,7 @@ export const ru: Dictionary = {
 
   "titlebar.minimize": "Свернуть",
   "titlebar.maximize": "Развернуть",
+  "titlebar.restore": "Восстановить",
   "titlebar.close": "Закрыть",
 
   "common.loading": "Загрузка",
@@ -784,6 +795,11 @@ export const ru: Dictionary = {
   "servers.checked": "Проверено {time}",
   "servers.none": "Ещё не проверялся",
   "servers.packPlaceholder": "campfire",
+  "servers.copy": "Скопировать адрес",
+  "servers.copied": "Адрес скопирован",
+  "servers.commandPlaceholder": "whitelist add <player>",
+  "servers.send": "Отправить",
+  "servers.whitelistHint": "Игроки добавляются в консоли сервера после запуска: whitelist add <player>.",
 
   "instances.title": "Профили",
   "instances.lead": "У каждой сборки свои миры, конфиги, скриншоты и логи. Удаление одной не трогает остальные.",
@@ -810,6 +826,9 @@ export const ru: Dictionary = {
   "instances.buildDone": "Нативная сборка завершена",
   "instances.buildFailed": "Нативная сборка не удалась",
   "instances.buildRunning": "Собираю нативные моды…",
+  "instances.backup": "Сделать бэкап",
+  "instances.backupDone": "Бэкап: {files} файлов, {size}",
+  "instances.backupEmpty": "Пока нет миров для бэкапа.",
 
   "library.title": "Библиотека",
   "library.lead": "Твои файлы. Закинь в профиль, включай и выключай, сохраняй при обновлениях сборки.",
@@ -947,6 +966,7 @@ export const ru: Dictionary = {
   "settings.reset": "Сбросить все настройки",
   "settings.resetBody": "Профили и миры не затрагиваются.",
   "settings.savedToast": "Настройки сохранены",
+  "settings.restartNeeded": "Перезапусти лаунчер, чтобы применить аппаратное ускорение.",
   "settings.openProfiles": "Открыть папку профилей",
   "settings.chooseFolder": "Выбрать папку",
   "settings.invalidArgs": "Аргументы не могут содержать кавычки и знаки процента.",

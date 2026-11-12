@@ -35,10 +35,12 @@ const api: LauncherApi = {
   profilesPlay: (id) => ipcRenderer.invoke("profiles:play", id),
   profilesNativeBuild: (id) => ipcRenderer.invoke("profiles:native-build", id),
   profilesOpen: (id) => ipcRenderer.invoke("profiles:open", id),
+  backupsCreate: (profileId) => ipcRenderer.invoke("backups:create", profileId),
   profilesUpdateLaunch: (id, launch) => ipcRenderer.invoke("profiles:update-launch", id, launch),
 
   installStart: (id) => ipcRenderer.invoke("install:start", id),
   installCancel: () => ipcRenderer.invoke("install:cancel"),
+  modsInstall: (modId, profileId) => ipcRenderer.invoke("mods:install", modId, profileId),
 
   localList: (profileId) => ipcRenderer.invoke("local:list", profileId),
   localPick: (profileId) => ipcRenderer.invoke("local:pick", profileId),
@@ -55,6 +57,7 @@ const api: LauncherApi = {
   serversPing: (id) => ipcRenderer.invoke("servers:ping", id),
   serversStart: (id) => ipcRenderer.invoke("servers:start", id),
   serversStop: () => ipcRenderer.invoke("servers:stop"),
+  serversCommand: (command) => ipcRenderer.invoke("servers:command", command),
 
   logsRead: (source, lines) => ipcRenderer.invoke("logs:read", source, lines),
   logsOpenFolder: () => ipcRenderer.invoke("logs:open"),
@@ -78,6 +81,7 @@ const api: LauncherApi = {
 
   onInstallProgress: (cb) => subscribe<InstallProgress>("install:progress", cb),
   onNativeLine: (cb) => subscribe<{ id: string; line: string }>("native:line", cb),
+  onModsLine: (cb) => subscribe<{ id: string; line: string }>("mods:line", cb),
   onProjectProgress: (cb) =>
     subscribe<{ projectId: string; percent: number; phase: "downloading" | "verifying" | "done" }>(
       "project:progress",

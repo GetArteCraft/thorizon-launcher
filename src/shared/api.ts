@@ -60,6 +60,7 @@ export interface LauncherApi {
   profilesPlay(id: string): Promise<PlayResult>;
   profilesNativeBuild(id: string): Promise<PlayResult>;
   profilesOpen(id: string): Promise<void>;
+  backupsCreate(profileId: string): Promise<{ path: string; files: number; bytes: number } | null>;
   profilesUpdateLaunch(
     id: string,
     launch: Pick<Settings, "launchMode" | "launchWidth" | "launchHeight" | "launchArgs" | "hideLauncherOnPlay">,
@@ -67,6 +68,7 @@ export interface LauncherApi {
 
   installStart(id: string): Promise<void>;
   installCancel(): Promise<boolean>;
+  modsInstall(modId: string, profileId: string): Promise<PlayResult>;
 
   localList(profileId: string): Promise<LocalFile[]>;
   localPick(profileId: string): Promise<string[]>;
@@ -88,6 +90,7 @@ export interface LauncherApi {
   serversPing(id: string): Promise<ServerEntry | null>;
   serversStart(id: string): Promise<void>;
   serversStop(): Promise<boolean>;
+  serversCommand(command: string): Promise<boolean>;
 
   logsRead(source: "app" | "cli", lines?: number): Promise<string>;
   logsOpenFolder(): Promise<void>;
@@ -111,6 +114,7 @@ export interface LauncherApi {
 
   onInstallProgress(cb: (progress: InstallProgress) => void): () => void;
   onNativeLine(cb: (payload: { id: string; line: string }) => void): () => void;
+  onModsLine(cb: (payload: { id: string; line: string }) => void): () => void;
   onProjectProgress(cb: (payload: { projectId: string; percent: number; phase: "downloading" | "verifying" | "done" }) => void): () => void;
   onServerLine(cb: (payload: { id: string; line: string }) => void): () => void;
   onUpdateState(cb: (state: UpdateState) => void): () => void;

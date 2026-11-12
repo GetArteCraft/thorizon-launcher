@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { Icon } from "./Icon";
 import { api } from "../lib/api";
+import { useI18n } from "../i18n";
+import { useUi } from "../store";
 
 export function TitleBar({ title, subtitle }: { title: string; subtitle?: string }) {
+  const { t } = useI18n();
+  const version = useUi((state) => state.env?.appVersion) ?? "0.1.0";
   const [maximized, setMaximized] = useState(false);
 
   useEffect(() => {
@@ -18,9 +22,12 @@ export function TitleBar({ title, subtitle }: { title: string; subtitle?: string
           <span />
         </span>
         <b>THorizon</b>
-        <span className="titlebar__version">0.1</span>
+        <span className="titlebar__version">{version}</span>
       </div>
-      <div className="titlebar__drag">
+      <div
+        className="titlebar__drag"
+        onDoubleClick={() => void api?.windowToggleMaximize().then(setMaximized)}
+      >
         <span className="titlebar__crumb">{title}</span>
         {subtitle ? <span className="titlebar__sub">{subtitle}</span> : null}
       </div>
@@ -28,7 +35,7 @@ export function TitleBar({ title, subtitle }: { title: string; subtitle?: string
         <button
           type="button"
           className="window-btn"
-          aria-label="Minimize"
+          aria-label={t("titlebar.minimize")}
           onClick={() => void api?.windowMinimize()}
         >
           <Icon name="minimize" size={14} />
@@ -36,7 +43,7 @@ export function TitleBar({ title, subtitle }: { title: string; subtitle?: string
         <button
           type="button"
           className="window-btn"
-          aria-label={maximized ? "Restore" : "Maximize"}
+          aria-label={maximized ? t("titlebar.restore") : t("titlebar.maximize")}
           onClick={() => void api?.windowToggleMaximize().then(setMaximized)}
         >
           <Icon name={maximized ? "restore" : "maximize"} size={12} />
@@ -44,7 +51,7 @@ export function TitleBar({ title, subtitle }: { title: string; subtitle?: string
         <button
           type="button"
           className="window-btn window-btn--close"
-          aria-label="Close"
+          aria-label={t("titlebar.close")}
           onClick={() => void api?.windowClose()}
         >
           <Icon name="close" size={14} />
