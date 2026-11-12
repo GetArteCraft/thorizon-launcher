@@ -8,6 +8,16 @@ THorizon is an independent project. Playing Horizon requires a Microsoft account
 owns Minecraft: Java Edition; the check lives in the official client and is not
 bypassed. The launcher stores no account tokens.
 
+## Screens
+
+| Home | Packs |
+|---|---|
+| ![Home](docs/home.png) | ![Packs](docs/packs.png) |
+
+| Pack editor |
+|---|
+| ![Pack editor](docs/editor.png) |
+
 ## Run
 
 ```bash
