@@ -6,6 +6,11 @@
   "author": "THorizon",
   "license": "MIT",
   "private": true,
+  "homepage": "https://thorizon.app/launcher",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GetArteCraft/thorizon-launcher.git"
+  },
   "main": "./out/main/index.js",
   "scripts": {
     "sync": "node scripts/sync-data.mjs",
