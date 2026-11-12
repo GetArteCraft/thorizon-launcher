@@ -1,0 +1,99 @@
+/* «Voxel Glass» — общие токены лаунчера (docs/12 §5). */
+:root {
+  --bg-0: #080b10;
+  --bg-1: #0d1119;
+  --bg-2: #121826;
+  --bg-3: #18202f;
+  --panel: rgba(255, 255, 255, 0.045);
+  --panel-strong: rgba(255, 255, 255, 0.07);
+  --glass: rgba(255, 255, 255, 0.06);
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --accent: #5ee6a8;
+  --accent-deep: #2f9f72;
+  --accent-2: #7aa2ff;
+  --violet: #b49bff;
+  --amber: #ffb86b;
+  --danger: #ff6b6b;
+  --text-0: #f2f5fa;
+  --text-1: #afb8c8;
+  --text-2: #727d90;
+  --text-3: #525c6d;
+  --tone-mint: #5ee6a8;
+  --tone-blue: #7aa2ff;
+  --tone-violet: #b49bff;
+  --tone-amber: #ffb86b;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+  --radius-pill: 999px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --shadow-card: 0 24px 60px -30px rgba(0, 0, 0, 0.9);
+  --shadow-pop: 0 30px 90px -20px rgba(0, 0, 0, 0.8);
+  --shadow-accent: 0 10px 30px -12px rgba(94, 230, 168, 0.55);
+  --font-ui: "Inter", "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --font-display: "Space Grotesk", "Segoe UI Variable Display", "Segoe UI Semibold", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "Cascadia Code", Menlo, monospace;
+  --dur-page: 260ms;
+  --ease-page: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --topbar: 42px;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg-0: #eef2ee;
+  --bg-1: #f5f8f4;
+  --bg-2: #ffffff;
+  --bg-3: #e6ede6;
+  --panel: rgba(255, 255, 255, 0.66);
+  --panel-strong: rgba(255, 255, 255, 0.86);
+  --glass: rgba(255, 255, 255, 0.6);
+  --line: rgba(18, 40, 28, 0.1);
+  --line-strong: rgba(18, 40, 28, 0.18);
+  --accent: #15996b;
+  --accent-deep: #0d7552;
+  --accent-2: #3d6fe0;
+  --violet: #7657d6;
+  --amber: #b56a12;
+  --danger: #c94141;
+  --text-0: #102016;
+  --text-1: #3d5145;
+  --text-2: #66796d;
+  --text-3: #8a998f;
+  --tone-mint: #15996b;
+  --tone-blue: #3d6fe0;
+  --tone-violet: #7657d6;
+  --tone-amber: #b56a12;
+  --shadow-card: 0 24px 50px -32px rgba(18, 40, 28, 0.35);
+  --shadow-pop: 0 30px 80px -24px rgba(18, 40, 28, 0.28);
+  --shadow-accent: 0 10px 26px -12px rgba(21, 153, 107, 0.45);
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-page: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+[data-reduced="true"] *,
+[data-reduced="true"] *::before,
+[data-reduced="true"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}

@@ -1,0 +1,12 @@
+node_modules/
+out/
+release/
+dist-electron/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

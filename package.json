@@ -1,0 +1,48 @@
+{
+  "name": "thorizon-launcher",
+  "productName": "THorizon",
+  "version": "0.1.0",
+  "description": "THorizon launcher — packs, mods, shaders and servers for Horizon in one window",
+  "author": "THorizon",
+  "license": "MIT",
+  "private": true,
+  "main": "./out/main/index.js",
+  "scripts": {
+    "sync": "node scripts/sync-data.mjs",
+    "predev": "npm run sync",
+    "dev": "electron-vite dev",
+    "prebuild": "npm run sync",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "smoke": "npm run build && node scripts/smoke.mjs",
+    "dist": "npm run build && electron-builder",
+    "dist:win": "npm run build && electron-builder --win nsis",
+    "dist:linux": "npm run build && electron-builder --linux appimage deb"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.11",
+    "jszip": "^3.10.2"
+  },
+  "devDependencies": {
+    "@react-three/fiber": "^9.8.2",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.187.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "electron": "^45.3.1",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^6.0.0",
+    "framer-motion": "^14.12.0",
+    "playwright-core": "^1.55.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.187.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0",
+    "zustand": "^5.1.0"
+  }
+}

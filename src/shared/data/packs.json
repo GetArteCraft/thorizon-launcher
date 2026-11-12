@@ -1,0 +1,2670 @@
+{
+  "schema": 1,
+  "generated": "2026-11-11T00:00:00Z",
+  "brand": {
+    "name": "THorizon",
+    "tagline": "Hand-built modpacks and a launcher for Horizon.",
+    "domain": "thorizon.app",
+    "site": "https://thorizon.app",
+    "github": "GetArteCraft",
+    "locales": [
+      "en",
+      "ru",
+      "uk",
+      "de",
+      "nl",
+      "fr",
+      "es",
+      "pt-BR",
+      "it",
+      "pl",
+      "tr",
+      "zh-Hans",
+      "ja",
+      "ko",
+      "id"
+    ],
+    "phase1": [
+      "en",
+      "ru",
+      "uk"
+    ]
+  },
+  "stats": {
+    "packs": 20,
+    "modEntries": 307,
+    "uniqueMods": 104,
+    "languages": 15,
+    "phase1Languages": 3
+  },
+  "packs": [
+    {
+      "id": "better_plus",
+      "name": "Better+",
+      "summary": "The all-rounder: recipes, maps, HUD and enough content to keep a world going.",
+      "description": "Better+ is the pack we recommend first. JEI answers recipe questions, Jade names the block you're looking at, Atlas draws the map, and the HUD covers food, effects and coordinates without turning the screen into a dashboard. There are lamps, industrial blocks, all 179 Macaw's trapdoors and Silent's Gems underground. It adds conveniences and decoration, not a different game. 39 mods, one pin, one click.",
+      "localeSummaries": {
+        "en": "The all-rounder: recipes, maps, HUD and enough content to keep a world going.",
+        "ru": "Флагман. Ванильный Horizon, доведённый до ума: удобство, инфо, лёгкий контент — без читов и без ломки мира."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 39 mods.",
+      "game": "26.3",
+      "categories": [
+        "kitchen-sink",
+        "adventure",
+        "optimization"
+      ],
+      "categoryLabels": [
+        "Kitchen sink",
+        "Adventure",
+        "Optimization"
+      ],
+      "categoryTones": [
+        "mint",
+        "blue",
+        "lime"
+      ],
+      "tags": [
+        "qol",
+        "vanilla-plus",
+        "starter",
+        "jei",
+        "atlas",
+        "flagship"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/better_plus.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 1,
+        "mods": 39,
+        "size_kb": 3
+      },
+      "serverSafe": true,
+      "analog": "Better MC [Fabric] (BMC4)",
+      "mods": [
+        {
+          "id": "appleskin_horizon",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fps_overlay",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "keystrokes",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "light_overlay",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "status_effect_hud",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "rider_hud",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "toggle_sprint",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "eatinganimation",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "crosshair_indicator",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "jei",
+          "version": "0.2.1",
+          "license": "MIT"
+        },
+        {
+          "id": "jade",
+          "version": "26.3.8",
+          "license": "CC-BY-NC-SA-4.0"
+        },
+        {
+          "id": "atlas",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "chat_heads_rust",
+          "version": "1.0.2",
+          "license": "MIT"
+        },
+        {
+          "id": "map_preview",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "blood_particles",
+          "version": "1.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "trails",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "first_person_body",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "wayfarer_stones_native",
+          "version": "0.6.3",
+          "license": "MIT"
+        },
+        {
+          "id": "wayfarer_stones",
+          "version": "0.6.1",
+          "license": "MIT"
+        },
+        {
+          "id": "stuck",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "id": "held_item_info",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "rarity_borders",
+          "version": "0.1.1",
+          "license": "MIT"
+        },
+        {
+          "id": "invisible_frames",
+          "version": "0.1.1",
+          "license": "MIT"
+        },
+        {
+          "id": "shulkerboxtooltip",
+          "version": "1.0.1",
+          "license": "MIT"
+        },
+        {
+          "id": "connected_textures",
+          "version": "0.1.7",
+          "license": "MIT"
+        },
+        {
+          "id": "resourcify",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "chat_animation",
+          "version": "0.1.3",
+          "license": "MIT"
+        },
+        {
+          "id": "mousetweaks",
+          "version": "1.1.0",
+          "license": "BSD-3-Clause"
+        },
+        {
+          "id": "mod_menu",
+          "version": "0.3.5",
+          "license": "MIT"
+        },
+        {
+          "id": "cinematic_interactions",
+          "version": "0.12.2",
+          "license": "MIT"
+        },
+        {
+          "id": "additional_lights",
+          "version": "3.1.4",
+          "license": "MIT"
+        },
+        {
+          "id": "factory_blocks",
+          "version": "1.4.2",
+          "license": "MIT"
+        },
+        {
+          "id": "mcwtrpdoors",
+          "version": "1.1.5",
+          "license": "MIT"
+        },
+        {
+          "id": "silentgems",
+          "version": "5.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "flesh_to_leather",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "netherstarrecipe",
+          "version": "1.0.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "better_plus-1.0.0.hpack",
+        "url": "/files/better_plus-1.0.0.hpack",
+        "size": 2562,
+        "sha256": "5c8c5a8c25466db2cd124d7f122a74c01a5538a55b5c5dac73f0e651a8a9222d"
+      }
+    },
+    {
+      "id": "near_vanilla",
+      "name": "Near Vanilla",
+      "summary": "Zoom, FPS, coordinates and a cleaner HUD, on hook points old enough to run almost anywhere.",
+      "description": "Near Vanilla uses mods that hook the earliest points in the engine, so it keeps building on older nightlies. The world stays exactly as it is; the mods only touch the interface. You get zoom, an FPS counter, coordinates, AppleSkin, effect timers, inventory sorting, auto-sprint, a minimal recipe viewer and a light overlay. Try it when a newer pack refuses to build.",
+      "localeSummaries": {
+        "en": "Zoom, FPS, coordinates and a cleaner HUD, on hook points old enough to run almost anywhere.",
+        "ru": "Только моды с hooks ≤ 2 и ни одного content-мода: сборка, которая не сломается почти ни на каком Horizon."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 15 mods.",
+      "game": "26.3",
+      "categories": [
+        "lightweight",
+        "optimization"
+      ],
+      "categoryLabels": [
+        "Lightweight",
+        "Optimization"
+      ],
+      "categoryTones": [
+        "cyan",
+        "lime"
+      ],
+      "tags": [
+        "vanilla-plus",
+        "safe",
+        "low-risk",
+        "multiplayer"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/near_vanilla.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 2,
+        "pins": 0,
+        "mods": 15,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Fabulously Optimized / Vanilla Tweaks",
+      "mods": [
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fps_overlay",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "appleskin_horizon",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "status_effect_hud",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "toggle_sprint",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "light_overlay",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "eatinganimation",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "armor_status",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "crosshair_indicator",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "chat_heads_rust",
+          "version": "1.0.2",
+          "license": "MIT"
+        },
+        {
+          "id": "recipes",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "blockscope",
+          "version": "0.3.1",
+          "license": "MIT"
+        },
+        {
+          "id": "serverify",
+          "version": "0.1.0",
+          "license": "GPL-3.0-only"
+        }
+      ],
+      "download": {
+        "name": "near_vanilla-1.0.0.hpack",
+        "url": "/files/near_vanilla-1.0.0.hpack",
+        "size": 1280,
+        "sha256": "04cc54ccc4ddce20a49fcb103abbfefab82c2ce13b35509952cb66f5873e6139"
+      }
+    },
+    {
+      "id": "featherweight",
+      "name": "Featherweight",
+      "summary": "For a laptop: lower load, higher FPS, no maps or particles eating the frame budget.",
+      "description": "Featherweight is what we install on a laptop or an old GPU. Dynamic FPS cuts the load when the window is out of focus, Fast Items turns dropped items into 2D sprites, and the FPS counter with 1% lows shows what is actually happening. Maps, animations and extra particles stay out, because on a weak machine they cost more than they give. Ten mods, one pin.",
+      "localeSummaries": {
+        "en": "For a laptop: lower load, higher FPS, no maps or particles eating the frame budget.",
+        "ru": "Для ноутбука и старой видеокарты: только то, что поднимает FPS и снижает нагрузку."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 10 mods.",
+      "game": "26.3",
+      "categories": [
+        "optimization",
+        "lightweight"
+      ],
+      "categoryLabels": [
+        "Optimization",
+        "Lightweight"
+      ],
+      "categoryTones": [
+        "lime",
+        "cyan"
+      ],
+      "tags": [
+        "performance",
+        "low-end",
+        "laptop",
+        "fps"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/featherweight.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 1,
+        "pins": 1,
+        "mods": 10,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Simply Optimized / Adrenaline",
+      "mods": [
+        {
+          "id": "dynamic_fps_for_rust",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fast_items",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fps_overlay",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "light_overlay",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "crosshair_indicator",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "toggle_sprint",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "appleskin_horizon",
+          "version": "1.0.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "featherweight-1.0.0.hpack",
+        "url": "/files/featherweight-1.0.0.hpack",
+        "size": 1004,
+        "sha256": "5c7573175fd1e3d39d5d61ac83db404c31bce6278bcc4f6a938b0a6312450108"
+      }
+    },
+    {
+      "id": "studio",
+      "name": "Studio",
+      "summary": "A camera, physics and Distant Horizons: a pack for screenshots and slow pans.",
+      "description": "Studio is built for recording. A free camera with follow view and nine tripods, PhysicsModHorizon for waves and ragdolls, motion blur, First Person Body and CustomPlayerModels for the shot. Distant Horizons draws the ridge past the render distance, so the mountain has depth instead of fog. Resourcify and Fullbright & NoFog handle resource packs and night shots. Shader packs cannot live inside an .hpack, so the pack lists three registry shaders in its notes.",
+      "localeSummaries": {
+        "en": "A camera, physics and Distant Horizons: a pack for screenshots and slow pans.",
+        "ru": "Кино и дальний план: свободная камера, физика, LOD-горизонты и мягкое размытие — для скриншотов и видео."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 18 mods.",
+      "game": "26.3",
+      "categories": [
+        "lightweight",
+        "kitchen-sink"
+      ],
+      "categoryLabels": [
+        "Lightweight",
+        "Kitchen sink"
+      ],
+      "categoryTones": [
+        "cyan",
+        "mint"
+      ],
+      "tags": [
+        "cinematic",
+        "screenshots",
+        "camera",
+        "physics"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/studio.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 3,
+        "mods": 18,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Cinematic + Distant Horizons packs",
+      "mods": [
+        {
+          "id": "freecam_yannis",
+          "version": "1.0.1",
+          "license": "MIT"
+        },
+        {
+          "id": "living_camera",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "motion_blur",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "horizon_physics",
+          "version": "0.20.7",
+          "license": "MIT"
+        },
+        {
+          "id": "smoothie_capes",
+          "version": "0.5.1",
+          "license": "MIT"
+        },
+        {
+          "id": "first_person_body",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "cpm",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "trails",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "cinematic_interactions",
+          "version": "0.12.2",
+          "license": "MIT"
+        },
+        {
+          "id": "resourcify",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "fullbright_nofog",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "eatinganimation",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fps_overlay",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "distant_horizons",
+          "version": "0.1.0",
+          "license": "LGPL-3.0-only"
+        },
+        {
+          "id": "atlas",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "jade",
+          "version": "26.3.8",
+          "license": "CC-BY-NC-SA-4.0"
+        }
+      ],
+      "download": {
+        "name": "studio-1.0.0.hpack",
+        "url": "/files/studio-1.0.0.hpack",
+        "size": 1410,
+        "sha256": "b3dad97e6e102114d9e74b1918fd0cff086507d0dc7526ff54a4c02d0ce77e67"
+      }
+    },
+    {
+      "id": "blueprint",
+      "name": "Blueprint",
+      "summary": "Schematics, WorldEdit, block info and 179 trapdoors: a workshop for people who build.",
+      "description": "Blueprint is a building pack. Horizonmatica loads schematics as ghost blocks and lists what is missing; WorldEdit gives you //set, //copy and the rest; Blockscope names the block under your crosshair. Add 49 Factory Blocks, 80 lamps and torches, all 179 Macaw's trapdoors and invisible item frames. It is client-side, so a server sees none of it, and WorldEdit still needs operator rights the same way it does on Java.",
+      "localeSummaries": {
+        "en": "Schematics, WorldEdit, block info and 179 trapdoors: a workshop for people who build.",
+        "ru": "Строительная мастерская: схематики, WorldEdit, подсветка блоков и нормальные люки вместо досок."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 14 mods.",
+      "game": "26.3",
+      "categories": [
+        "lightweight",
+        "kitchen-sink"
+      ],
+      "categoryLabels": [
+        "Lightweight",
+        "Kitchen sink"
+      ],
+      "categoryTones": [
+        "cyan",
+        "mint"
+      ],
+      "tags": [
+        "building",
+        "schematics",
+        "worldedit",
+        "creative"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/blueprint.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 14,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Litematica + WorldEdit builder setups",
+      "mods": [
+        {
+          "id": "horizonmatica",
+          "version": "0.3.2",
+          "license": "MIT"
+        },
+        {
+          "id": "worldedit",
+          "version": "1.2.1",
+          "license": "MIT"
+        },
+        {
+          "id": "blockscope",
+          "version": "0.3.1",
+          "license": "MIT"
+        },
+        {
+          "id": "light_overlay",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "invisible_frames",
+          "version": "0.1.1",
+          "license": "MIT"
+        },
+        {
+          "id": "fly_speed",
+          "version": "0.2.0",
+          "license": "All Rights Reserved"
+        },
+        {
+          "id": "factory_blocks",
+          "version": "1.4.2",
+          "license": "MIT"
+        },
+        {
+          "id": "mcwtrpdoors",
+          "version": "1.1.5",
+          "license": "MIT"
+        },
+        {
+          "id": "additional_lights",
+          "version": "3.1.4",
+          "license": "MIT"
+        },
+        {
+          "id": "connected_textures",
+          "version": "0.1.7",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "jade",
+          "version": "26.3.8",
+          "license": "CC-BY-NC-SA-4.0"
+        },
+        {
+          "id": "resourcify",
+          "version": "0.1.2",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "blueprint-1.0.0.hpack",
+        "url": "/files/blueprint-1.0.0.hpack",
+        "size": 1226,
+        "sha256": "5b2a0fb2fad4493dae8a7b8535d29408dadf0474d4698f8463267f033f88ca85"
+      }
+    },
+    {
+      "id": "wallpaper",
+      "name": "Wallpaper",
+      "summary": "Lamps, panels, trapdoors and cosmetics: an interior pack for a base that looks lived in.",
+      "description": "Wallpaper is about how a base looks. Eighty lamps and torches with their own light levels, 49 industrial panels, all 179 Macaw's trapdoors, connected textures from Continuity, resource packs installed in-game with Resourcify. Cosmetics cover the rest: capes and hats in Flair, 3D skin pixels, CustomPlayerModels. The pack changes the room, not the world.",
+      "localeSummaries": {
+        "en": "Lamps, panels, trapdoors and cosmetics: an interior pack for a base that looks lived in.",
+        "ru": "Сборка про интерьер: лампы, люки, панели, соединяющиеся текстуры и косметика на себя."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 16 mods.",
+      "game": "26.3",
+      "categories": [
+        "lightweight",
+        "kitchen-sink"
+      ],
+      "categoryLabels": [
+        "Lightweight",
+        "Kitchen sink"
+      ],
+      "categoryTones": [
+        "cyan",
+        "mint"
+      ],
+      "tags": [
+        "decoration",
+        "interior",
+        "cosmetics",
+        "furniture"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/wallpaper.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 16,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Macaw's + Handcrafted decoration packs",
+      "mods": [
+        {
+          "id": "additional_lights",
+          "version": "3.1.4",
+          "license": "MIT"
+        },
+        {
+          "id": "factory_blocks",
+          "version": "1.4.2",
+          "license": "MIT"
+        },
+        {
+          "id": "mcwtrpdoors",
+          "version": "1.1.5",
+          "license": "MIT"
+        },
+        {
+          "id": "invisible_frames",
+          "version": "0.1.1",
+          "license": "MIT"
+        },
+        {
+          "id": "connected_textures",
+          "version": "0.1.7",
+          "license": "MIT"
+        },
+        {
+          "id": "resourcify",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "flair",
+          "version": "1.0.1",
+          "license": "MIT"
+        },
+        {
+          "id": "skins_3d",
+          "version": "1.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "cpm",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "rarity_borders",
+          "version": "0.1.1",
+          "license": "MIT"
+        },
+        {
+          "id": "eatinganimation",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "first_person_body",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "trails",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "recipes",
+          "version": "2.0.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "wallpaper-1.0.0.hpack",
+        "url": "/files/wallpaper-1.0.0.hpack",
+        "size": 1318,
+        "sha256": "b1071d45a153d5284389ee06bd6fca8e3bcf69ca50de3c616aabef678f8a6f00"
+      }
+    },
+    {
+      "id": "the_works",
+      "name": "The Works",
+      "summary": "AE2, Create, Voltz, ProjectE, a quarry and gems in one pack. Three pins; the first build takes a while.",
+      "description": "The Works puts the technical half of the registry into one pack. AE2 handles storage and autocrafting, Create handles mechanics, Voltz handles power and reactors, ProjectE handles EMC, Deepbore Quarry feeds the machines and Silent's Gems stocks the ore shelf. JEI and Jade explain what you're looking at, and sorting keeps the terminals usable. It pins three Horizon commits, so expect one Build anyway prompt and a slower first build. Twenty mods, not five hundred.",
+      "localeSummaries": {
+        "en": "AE2, Create, Voltz, ProjectE, a quarry and gems in one pack. Three pins; the first build takes a while.",
+        "ru": "Техно-флагман: AE2, Create, Voltz, ProjectE, карьер и самоцветы в одной сборке. Три пина — честно предупреждаем."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 20 mods.",
+      "game": "26.3",
+      "categories": [
+        "technology",
+        "kitchen-sink",
+        "quests"
+      ],
+      "categoryLabels": [
+        "Technology",
+        "Kitchen sink",
+        "Quests"
+      ],
+      "categoryTones": [
+        "violet",
+        "mint",
+        "gold"
+      ],
+      "tags": [
+        "kitchen-sink",
+        "tech",
+        "ae2",
+        "create",
+        "voltz",
+        "projecte"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/the_works.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 3,
+        "mods": 20,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "All the Mods 10",
+      "mods": [
+        {
+          "id": "ae2",
+          "version": "15.4.17",
+          "license": "LGPL-3.0-only AND CC-BY-NC-SA-3.0"
+        },
+        {
+          "id": "create",
+          "version": "0.7.0-alpha.2",
+          "license": "MIT"
+        },
+        {
+          "id": "voltz_core",
+          "version": "0.3.0",
+          "license": "MIT"
+        },
+        {
+          "id": "voltz",
+          "version": "0.3.0",
+          "license": "MIT"
+        },
+        {
+          "id": "projecte_core",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "projecte",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "deepbore_quarry_native",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "deepbore_quarry",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "silentgems",
+          "version": "5.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "shulkerboxtooltip",
+          "version": "1.0.1",
+          "license": "MIT"
+        },
+        {
+          "id": "netherstarrecipe",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "flesh_to_leather",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "jei",
+          "version": "0.2.1",
+          "license": "MIT"
+        },
+        {
+          "id": "jade",
+          "version": "26.3.8",
+          "license": "CC-BY-NC-SA-4.0"
+        },
+        {
+          "id": "factory_blocks",
+          "version": "1.4.2",
+          "license": "MIT"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "map_preview",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "light_overlay",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "stuck",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "download": {
+        "name": "the_works-1.0.0.hpack",
+        "url": "/files/the_works-1.0.0.hpack",
+        "size": 1535,
+        "sha256": "914da373d60df1724462050b932a2ff0f9bd72c9f565c23214f6fb904728d8ba"
+      }
+    },
+    {
+      "id": "grid",
+      "name": "Grid",
+      "summary": "AE2 and its neighbours: ME networks, autocrafting, P2P tunnels and spatial storage, zero pins.",
+      "description": "Grid is built around Applied Energistics 2. ME networks, storage cells, autocrafting, the cable bus with facades, P2P tunnels and spatial storage, with JEI and Jade wired into the terminal. Every mod sits on named hook points, so the pack builds on any recent nightly with hooks 411 or later. Twelve mods, no pinned commits.",
+      "localeSummaries": {
+        "en": "AE2 and its neighbours: ME networks, autocrafting, P2P tunnels and spatial storage, zero pins.",
+        "ru": "AE2 без компромиссов: ME-сети, авто-крафт и бездонное хранилище — и ни одного пина."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 12 mods.",
+      "game": "26.3",
+      "categories": [
+        "technology",
+        "kitchen-sink"
+      ],
+      "categoryLabels": [
+        "Technology",
+        "Kitchen sink"
+      ],
+      "categoryTones": [
+        "violet",
+        "mint"
+      ],
+      "tags": [
+        "ae2",
+        "storage",
+        "autocrafting",
+        "automation"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/grid.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 1,
+        "mods": 12,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Nomifactory / AE2-focused tech packs",
+      "mods": [
+        {
+          "id": "ae2",
+          "version": "15.4.17",
+          "license": "LGPL-3.0-only AND CC-BY-NC-SA-3.0"
+        },
+        {
+          "id": "jei",
+          "version": "0.2.1",
+          "license": "MIT"
+        },
+        {
+          "id": "jade",
+          "version": "26.3.8",
+          "license": "CC-BY-NC-SA-4.0"
+        },
+        {
+          "id": "factory_blocks",
+          "version": "1.4.2",
+          "license": "MIT"
+        },
+        {
+          "id": "map_preview",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "shulkerboxtooltip",
+          "version": "1.0.1",
+          "license": "MIT"
+        },
+        {
+          "id": "connected_textures",
+          "version": "0.1.7",
+          "license": "MIT"
+        },
+        {
+          "id": "mod_menu",
+          "version": "0.3.5",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "stuck",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "download": {
+        "name": "grid-1.0.0.hpack",
+        "url": "/files/grid-1.0.0.hpack",
+        "size": 1117,
+        "sha256": "1cc15a67443ddb0e662c55ca44b1824b6d7f4878c39c91043e01575012fe300d"
+      }
+    },
+    {
+      "id": "high_voltage",
+      "name": "High Voltage",
+      "summary": "Voltz, a reactor, missiles and fifteen orbital strikes. Built for single-player and LAN.",
+      "description": "High Voltage starts with classic Voltz: wires, generators, batteries, an electric furnace, a crusher, a nuclear reactor, missiles, turrets and force fields. Then Big Nukes adds uranium, a centrifuge, an assembly table and warheads with craters and fallout, while Orbital Laser adds a wheel of fifteen strikes from a laser to a meteor storm. Deepbore Quarry feeds the machines; JEI and Jade explain them. Single-player and LAN only.",
+      "localeSummaries": {
+        "en": "Voltz, a reactor, missiles and fifteen orbital strikes. Built for single-player and LAN.",
+        "ru": "Voltz, реактор, ракеты — и пятнадцать орбитальных ударов сверху. Сборка «а что если»."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 14 mods.",
+      "game": "26.3",
+      "categories": [
+        "technology",
+        "challenging"
+      ],
+      "categoryLabels": [
+        "Technology",
+        "Challenging"
+      ],
+      "categoryTones": [
+        "violet",
+        "orange"
+      ],
+      "tags": [
+        "voltz",
+        "power",
+        "reactor",
+        "explosives"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/high_voltage.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 14,
+        "size_kb": 1
+      },
+      "serverSafe": false,
+      "analog": "Voltz + ICBM/nukes packs",
+      "mods": [
+        {
+          "id": "voltz_core",
+          "version": "0.3.0",
+          "license": "MIT"
+        },
+        {
+          "id": "voltz",
+          "version": "0.3.0",
+          "license": "MIT"
+        },
+        {
+          "id": "big_nukes_native",
+          "version": "0.1.3",
+          "license": "MIT"
+        },
+        {
+          "id": "deepbore_quarry_native",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "deepbore_quarry",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "light_overlay",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "orbital",
+          "version": "0.5.10",
+          "license": "MIT"
+        },
+        {
+          "id": "jei",
+          "version": "0.2.1",
+          "license": "MIT"
+        },
+        {
+          "id": "jade",
+          "version": "26.3.8",
+          "license": "CC-BY-NC-SA-4.0"
+        },
+        {
+          "id": "factory_blocks",
+          "version": "1.4.2",
+          "license": "MIT"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "stuck",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        }
+      ],
+      "download": {
+        "name": "high_voltage-1.0.0.hpack",
+        "url": "/files/high_voltage-1.0.0.hpack",
+        "size": 1205,
+        "sha256": "b9d09ca31fca4e7d902f446972106cedd360f5a0dd5f863551a13b85cb48b919"
+      }
+    },
+    {
+      "id": "deep_shift",
+      "name": "Deep Shift",
+      "summary": "A quarry, Veinminer and 84 ores underground: a miner's shift with no automation.",
+      "description": "Deep Shift is about digging. Deepbore Quarry cuts a square pit to bedrock on furnace fuel, Veinminer takes a whole vein in one hit, and Silent's Gems adds 21 gems and 84 ores to find. Light Overlay shows where mobs can spawn and MineLights gives you a lamp you can place in a hurry. There are no ME networks or factories: a pickaxe, a quarry and a chest.",
+      "localeSummaries": {
+        "en": "A quarry, Veinminer and 84 ores underground: a miner's shift with no automation.",
+        "ru": "Шахтёрская смена: карьер, Veinminer, самоцветы и RGB-подсветка клавиатуры под землёй."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 15 mods.",
+      "game": "26.3",
+      "categories": [
+        "technology",
+        "adventure"
+      ],
+      "categoryLabels": [
+        "Technology",
+        "Adventure"
+      ],
+      "categoryTones": [
+        "violet",
+        "blue"
+      ],
+      "tags": [
+        "mining",
+        "quarry",
+        "veinminer",
+        "gems"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/deep_shift.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 15,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Mining-focused packs (Deepcore / Ore Excavation setups)",
+      "mods": [
+        {
+          "id": "deepbore_quarry_native",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "deepbore_quarry",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "veinminer",
+          "version": "0.3.2",
+          "license": "MIT"
+        },
+        {
+          "id": "silentgems",
+          "version": "5.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "light_overlay",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "minelights",
+          "version": "2.4.0",
+          "license": "CC-BY-NC-SA-4.0"
+        },
+        {
+          "id": "jei",
+          "version": "0.2.1",
+          "license": "MIT"
+        },
+        {
+          "id": "jade",
+          "version": "26.3.8",
+          "license": "CC-BY-NC-SA-4.0"
+        },
+        {
+          "id": "blockscope",
+          "version": "0.3.1",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "stuck",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "appleskin_horizon",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "context_tools",
+          "version": "1.3.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "deep_shift-1.0.0.hpack",
+        "url": "/files/deep_shift-1.0.0.hpack",
+        "size": 1253,
+        "sha256": "97e6660c9464c260360faae315bcc57114015cafebb2c53cb766c74ba4520ce6"
+      }
+    },
+    {
+      "id": "seedstock",
+      "name": "Seedstock",
+      "summary": "Inferium, right-click harvest and 84 Silent's Gems ores: a farm pack that also digs.",
+      "description": "Seedstock is for the part of the game where you settle down. Inferium Lab grows Inferium on ordinary farmland, Right-Click Crops harvests and replants sixteen plant families, and Silent's Gems adds 21 gems with storage blocks and 84 ores across the three dimensions. Enchantment Hints explains what an enchantment does, and two extra recipes patch the most annoying gaps in vanilla crafting. No bosses, no timers.",
+      "localeSummaries": {
+        "en": "Inferium, right-click harvest and 84 Silent's Gems ores: a farm pack that also digs.",
+        "ru": "Ферма и самоцветы: Inferium, right-click harvest, 84 руды Silent’s Gems и подсказки к зачарованиям."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 14 mods.",
+      "game": "26.3",
+      "categories": [
+        "magic",
+        "technology"
+      ],
+      "categoryLabels": [
+        "Magic",
+        "Technology"
+      ],
+      "categoryTones": [
+        "pink",
+        "violet"
+      ],
+      "tags": [
+        "farming",
+        "essence",
+        "crops",
+        "relaxed"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/seedstock.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 14,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Mystical Agriculture + Silent’s Gems packs",
+      "mods": [
+        {
+          "id": "inferium_lab",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "right_click_crops",
+          "version": "1.0.1",
+          "license": "MIT"
+        },
+        {
+          "id": "silentgems",
+          "version": "5.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "netherstarrecipe",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "flesh_to_leather",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "jei",
+          "version": "0.2.1",
+          "license": "MIT"
+        },
+        {
+          "id": "jade",
+          "version": "26.3.8",
+          "license": "CC-BY-NC-SA-4.0"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "map_preview",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "appleskin_horizon",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "eatinganimation",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "enchantmenthints",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "blockscope",
+          "version": "0.3.1",
+          "license": "MIT"
+        },
+        {
+          "id": "smartf3",
+          "version": "0.1.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "seedstock-1.0.0.hpack",
+        "url": "/files/seedstock-1.0.0.hpack",
+        "size": 1219,
+        "sha256": "7b0118b8c67e60132c8f4db56b93857aa5249c1cdc3681e0d9b2c324b56db55c"
+      }
+    },
+    {
+      "id": "hearth",
+      "name": "Hearth",
+      "summary": "One axe fells the tree, a chest rides in your arms, and the way home is on the compass.",
+      "description": "Hearth is for slow play. TreeFall fells a whole tree from one axe hit, Carry Block lets you walk a chest full of items to the new house, BiomeCompass points at the biome you're after, and Wayfarer Stones links the places you've been for experience levels. The mods work on the existing world, so an old save starts fresh without new terrain.",
+      "localeSummaries": {
+        "en": "One axe fells the tree, a chest rides in your arms, and the way home is on the compass.",
+        "ru": "Уютное выживание: топор валит дерево, сундук носится в руках, дорога домой всегда под рукой."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 17 mods.",
+      "game": "26.3",
+      "categories": [
+        "adventure",
+        "kitchen-sink"
+      ],
+      "categoryLabels": [
+        "Adventure",
+        "Kitchen sink"
+      ],
+      "categoryTones": [
+        "blue",
+        "mint"
+      ],
+      "tags": [
+        "cozy",
+        "survival",
+        "smp",
+        "qol"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/hearth.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 409,
+        "pins": 2,
+        "mods": 17,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Cottage Witch / Comforts",
+      "mods": [
+        {
+          "id": "treefall",
+          "version": "0.3.0",
+          "license": "MIT"
+        },
+        {
+          "id": "carryblock",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "mousetricks",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "biomecompass",
+          "version": "0.2.2",
+          "license": "MIT"
+        },
+        {
+          "id": "smartf3",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "enchantmenthints",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "itemnew",
+          "version": "0.1.1",
+          "license": "MIT"
+        },
+        {
+          "id": "lookat",
+          "version": "0.2.1",
+          "license": "MIT"
+        },
+        {
+          "id": "appleskin_horizon",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "eatinganimation",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "right_click_crops",
+          "version": "1.0.1",
+          "license": "MIT"
+        },
+        {
+          "id": "wayfarer_stones_native",
+          "version": "0.6.3",
+          "license": "MIT"
+        },
+        {
+          "id": "wayfarer_stones",
+          "version": "0.6.1",
+          "license": "MIT"
+        },
+        {
+          "id": "atlas",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "stuck",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "hearth-1.0.0.hpack",
+        "url": "/files/hearth-1.0.0.hpack",
+        "size": 1374,
+        "sha256": "232d141042e18e034ec77a167b5824afae43bbea73e4728427b7b68d4a277a1b"
+      }
+    },
+    {
+      "id": "stone_road",
+      "name": "Stone Road",
+      "summary": "Stone roads, a biome compass and a map that keeps your waypoints.",
+      "description": "Stone Road is about travelling with a cost. Wayfarer Stones lets you place stones, find them in villages and jump between the ones you've visited for experience levels. Strangely Charming adds village and exploration content that a pack maker can switch off piece by piece, BiomeCompass points at the biome you want, Atlas keeps the map and waypoints, and Stuck? gets you out of a hole or off the Nether roof. Weapons and armour stay vanilla; the roads are the point.",
+      "localeSummaries": {
+        "en": "Stone roads, a biome compass and a map that keeps your waypoints.",
+        "ru": "Дорога и странствие: сеть камней-телепортов, Strangely Charming, компас по биомам и карта, которая не врёт."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 14 mods.",
+      "game": "26.3",
+      "categories": [
+        "adventure",
+        "quests"
+      ],
+      "categoryLabels": [
+        "Adventure",
+        "Quests"
+      ],
+      "categoryTones": [
+        "blue",
+        "gold"
+      ],
+      "tags": [
+        "travel",
+        "waystones",
+        "exploration",
+        "map"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/stone_road.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 14,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Waystones + Better Adventures+",
+      "mods": [
+        {
+          "id": "wayfarer_stones_native",
+          "version": "0.6.3",
+          "license": "MIT"
+        },
+        {
+          "id": "wayfarer_stones",
+          "version": "0.6.1",
+          "license": "MIT"
+        },
+        {
+          "id": "biomecompass",
+          "version": "0.2.2",
+          "license": "MIT"
+        },
+        {
+          "id": "atlas",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "stuck",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "id": "light_overlay",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "smartf3",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "strangely_charming",
+          "version": "0.2.11",
+          "license": "MIT"
+        },
+        {
+          "id": "jade",
+          "version": "26.3.8",
+          "license": "CC-BY-NC-SA-4.0"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "appleskin_horizon",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "eatinganimation",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "stone_road-1.0.0.hpack",
+        "url": "/files/stone_road-1.0.0.hpack",
+        "size": 1198,
+        "sha256": "99574567ca78b5b6b6bae292d4b904251b72aaafb22db4087f4d3e903257e5c9"
+      }
+    },
+    {
+      "id": "skyline",
+      "name": "Skyline",
+      "summary": "Tectonic mountains and Distant Horizons LODs: a pack for looking at the world.",
+      "description": "Skyline changes the terrain and then lets you see it. Tectonic-Horizon brings mountain ranges, terrain density recipes and underground rivers; Distant Horizons draws LOD geometry far past the render distance, so a ridge reads as a ridge instead of a fog wall. Atlas, coordinates, zoom, Jade and Stuck? cover the rest. Tectonic changes world generation, so start a new world.",
+      "localeSummaries": {
+        "en": "Tectonic mountains and Distant Horizons LODs: a pack for looking at the world.",
+        "ru": "Новый рельеф: горные хребты Tectonic и LOD-горизонты, чтобы их было видно."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 10 mods.",
+      "game": "26.3",
+      "categories": [
+        "adventure",
+        "optimization"
+      ],
+      "categoryLabels": [
+        "Adventure",
+        "Optimization"
+      ],
+      "categoryTones": [
+        "blue",
+        "lime"
+      ],
+      "tags": [
+        "worldgen",
+        "tectonic",
+        "terrain",
+        "exploration"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/skyline.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 10,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Tectonic + Terralith + Distant Horizons",
+      "mods": [
+        {
+          "id": "tectonic_horizon",
+          "version": "0.3.4",
+          "license": "CC0-1.0"
+        },
+        {
+          "id": "distant_horizons",
+          "version": "0.1.0",
+          "license": "LGPL-3.0-only"
+        },
+        {
+          "id": "atlas",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "jade",
+          "version": "26.3.8",
+          "license": "CC-BY-NC-SA-4.0"
+        },
+        {
+          "id": "stuck",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "id": "eatinganimation",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "light_overlay",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fps_overlay",
+          "version": "2.0.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "skyline-1.0.0.hpack",
+        "url": "/files/skyline-1.0.0.hpack",
+        "size": 981,
+        "sha256": "12fe863ae79016714907ef94c626fd7709b72071c0c278f800dedec6cfdca4cc"
+      }
+    },
+    {
+      "id": "drift",
+      "name": "Drift",
+      "summary": "6DOF elytra, a flyable starship, web swinging and wall running: a movement pack.",
+      "description": "Drift is about moving. Gyro unlocks the elytra's horizon so you can bank, loop and turn like an aircraft; Astral Cruiser adds a large pilotable ship with a walkable interior, turrets, a coordinate dash and live portals. Spider-Man adds web swinging, zips and wall running tuned against the console games, while trails, a living camera and speed blur add the sense of speed. The HUD stays out of the way.",
+      "localeSummaries": {
+        "en": "6DOF elytra, a flyable starship, web swinging and wall running: a movement pack.",
+        "ru": "Движение: 6DOF-элитра, звездолёт с живым интерьером, паутина и паркур по стенам."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 12 mods.",
+      "game": "26.3",
+      "categories": [
+        "adventure",
+        "lightweight"
+      ],
+      "categoryLabels": [
+        "Adventure",
+        "Lightweight"
+      ],
+      "categoryTones": [
+        "blue",
+        "cyan"
+      ],
+      "tags": [
+        "flight",
+        "elytra",
+        "starship",
+        "movement"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/drift.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 12,
+        "size_kb": 1
+      },
+      "serverSafe": false,
+      "analog": "Do a Barrel Roll + Spider-Man parkour packs",
+      "mods": [
+        {
+          "id": "gyro",
+          "version": "1.4.1",
+          "license": "MIT"
+        },
+        {
+          "id": "elytratrails",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "astral_cruiser",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "trails",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "motion_blur",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "living_camera",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fullbright_nofog",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fps_overlay",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "spider_man",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "eatinganimation",
+          "version": "0.2.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "drift-1.0.0.hpack",
+        "url": "/files/drift-1.0.0.hpack",
+        "size": 1090,
+        "sha256": "5fc5d6e038cb03b86068fbcfd7e25639ba499a8119721893b46300b759a42601"
+      }
+    },
+    {
+      "id": "duel",
+      "name": "Duel",
+      "summary": "Hitboxes, timings, battle music and a fair free camera: a PvP pack for equal fights.",
+      "description": "Duel is built for fighting other players. Hitbox+ shows exact hitboxes and weapon reach, Held Item Info puts durability and enchantments above the hotbar, status and armour HUDs stay visible, and Keystrokes answers the sprint question. The crosshair lights up in reach and PVP Music changes with the fight. The only camera is Fair Freecam, with a multiplayer mode that keeps the rules intact.",
+      "localeSummaries": {
+        "en": "Hitboxes, timings, battle music and a fair free camera: a PvP pack for equal fights.",
+        "ru": "Честный PvP: хитбоксы, тайминги, музыка боя и ни одного чита."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 13 mods.",
+      "game": "26.3",
+      "categories": [
+        "combat",
+        "multiplayer",
+        "lightweight"
+      ],
+      "categoryLabels": [
+        "Combat",
+        "Multiplayer",
+        "Lightweight"
+      ],
+      "categoryTones": [
+        "red",
+        "amber",
+        "cyan"
+      ],
+      "tags": [
+        "pvp",
+        "combat",
+        "hud",
+        "fair-play"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/duel.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 139,
+        "pins": 2,
+        "mods": 13,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Lunar/Badlion-style PvP profiles",
+      "mods": [
+        {
+          "id": "hitbox_plus",
+          "version": "1.3.0",
+          "license": "MIT"
+        },
+        {
+          "id": "status_effect_hud",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "toggle_sprint",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "keystrokes",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "armor_status",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "held_item_info",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "crosshair_indicator",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "inventory_profiles",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "appleskin_horizon",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fps_overlay",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fullbright_nofog",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "pvp_music",
+          "version": "1.2.0",
+          "license": "CC0-1.0"
+        },
+        {
+          "id": "fair_freecam",
+          "version": "1.2.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "duel-1.0.0.hpack",
+        "url": "/files/duel-1.0.0.hpack",
+        "size": 1161,
+        "sha256": "6ed9e5b139ce7d9a029ad45cc25fe674f11ca7351980be5488458ef0a88e7b47"
+      }
+    },
+    {
+      "id": "campfire",
+      "name": "Campfire",
+      "summary": "Voice chat, chat heads, a server browser and a road to your friends' base.",
+      "description": "Campfire is the pack you install to play with friends. Simple Voice Chat handles positional voice with push-to-talk and groups, Chat Heads and ChatAnimation keep the chat readable, and Server Atlas covers search, favourites, LAN, filters and notes. Server Flags shows where a server lives, RMotd rotates the MOTD, and Cross Version with ViaHorizon opens older protocols for offline-mode servers. Atlas and Wayfarer Stones turn meeting up into a road.",
+      "localeSummaries": {
+        "en": "Voice chat, chat heads, a server browser and a road to your friends' base.",
+        "ru": "СМП-костёр: голос, головы в чате, браузер серверов, флаги стран и вход на старые версии протокола."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 15 mods.",
+      "game": "26.3",
+      "categories": [
+        "multiplayer",
+        "adventure"
+      ],
+      "categoryLabels": [
+        "Multiplayer",
+        "Adventure"
+      ],
+      "categoryTones": [
+        "amber",
+        "blue"
+      ],
+      "tags": [
+        "smp",
+        "voice-chat",
+        "social",
+        "multiplayer"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/campfire.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 15,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "SMP essentials + ViaFabric + server-browser packs",
+      "mods": [
+        {
+          "id": "simple_voice_chat",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "chat_heads_rust",
+          "version": "1.0.2",
+          "license": "MIT"
+        },
+        {
+          "id": "chat_animation",
+          "version": "0.1.3",
+          "license": "MIT"
+        },
+        {
+          "id": "server_flags",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "rmotd",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "id": "atlas",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "stuck",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "id": "wayfarer_stones_native",
+          "version": "0.6.3",
+          "license": "MIT"
+        },
+        {
+          "id": "wayfarer_stones",
+          "version": "0.6.1",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "resourcify",
+          "version": "0.1.2",
+          "license": "MIT"
+        },
+        {
+          "id": "connected_textures",
+          "version": "0.1.7",
+          "license": "MIT"
+        },
+        {
+          "id": "server_browser",
+          "version": "2.2.1",
+          "license": "MIT"
+        },
+        {
+          "id": "crossversion",
+          "version": "0.8.0",
+          "license": "MIT"
+        },
+        {
+          "id": "viahorizon",
+          "version": "0.8.8-dev",
+          "license": "GPL-3.0-or-later"
+        }
+      ],
+      "download": {
+        "name": "campfire-1.0.0.hpack",
+        "url": "/files/campfire-1.0.0.hpack",
+        "size": 1251,
+        "sha256": "6870346dd8560b5a0c22c29e4a62d3c5fd07af8f4b78511138d79e4634efa15c"
+      }
+    },
+    {
+      "id": "cockpit",
+      "name": "Cockpit",
+      "summary": "One HUD editor, a clock, statuses, sorting and Spotify: an interface pack with one home per data point.",
+      "description": "Cockpit is an interface pack with a rule: each piece of information gets one home. HUD+ is the only editor, with drag-and-drop placement, four views per module and a PvP profile. Beautiful Day Counter adds a clock; Keystrokes, FPS Counter, Held Item Info, Item New, Spotify HUD and Rider HUD fill the corners. Mouse Tricks and InventoryWizard handle the inventory, SmartF3 tidies the debug screen, and LookAt and Map Preview explain the world. AppleSkin, Armor Status and Status Effect HUD are left out because HUD+ draws them already.",
+      "localeSummaries": {
+        "en": "One HUD editor, a clock, statuses, sorting and Spotify: an interface pack with one home per data point.",
+        "ru": "Интерфейс: один HUD-редактор, часы, статусы, сортировка, трюки мышью и Spotify — всё на своих местах."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 16 mods.",
+      "game": "26.3",
+      "categories": [
+        "lightweight",
+        "optimization"
+      ],
+      "categoryLabels": [
+        "Lightweight",
+        "Optimization"
+      ],
+      "categoryTones": [
+        "cyan",
+        "lime"
+      ],
+      "tags": [
+        "hud",
+        "interface",
+        "info",
+        "qol"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/cockpit.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 16,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "HUD/QoL packs (MiniHUD, Inventory Sorter, Mouse Tweaks)",
+      "mods": [
+        {
+          "id": "hud_plus",
+          "version": "4",
+          "license": "MIT"
+        },
+        {
+          "id": "customhud",
+          "version": "1.7.0",
+          "license": "MIT"
+        },
+        {
+          "id": "toggle_sprint",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "keystrokes",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fps_overlay",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "held_item_info",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "itemnew",
+          "version": "0.1.1",
+          "license": "MIT"
+        },
+        {
+          "id": "rider_hud",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "spotify_hud",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "map_preview",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "mousetricks",
+          "version": "0.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "lookat",
+          "version": "0.2.1",
+          "license": "MIT"
+        },
+        {
+          "id": "smartf3",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "inventory_wizard",
+          "version": "2.3.3",
+          "license": "MIT"
+        },
+        {
+          "id": "rarity_borders",
+          "version": "0.1.1",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "cockpit-1.0.0.hpack",
+        "url": "/files/cockpit-1.0.0.hpack",
+        "size": 1322,
+        "sha256": "b6f1a403dac2f4d48247d34d1f825091e9dbef32464305a494983d201ac06436"
+      }
+    },
+    {
+      "id": "any_percent",
+      "name": "Any%",
+      "summary": "A speedrun timer, light overlay and coordinates: a thin pack for single-player runs.",
+      "description": "Any% is a speedrun pack with as little as possible in the way. Speedrun Timer survives deaths and world restarts, Light Overlay shows spawnable blocks (the same information F3 gives), Hitbox+ helps with the dragon, and AppleSkin, statuses and coordinates remove guesswork. I'm Fast is included because the pack is for single-player and LAN runs. World-changing mods stay out so the seed and the terrain behave.",
+      "localeSummaries": {
+        "en": "A speedrun timer, light overlay and coordinates: a thin pack for single-player runs.",
+        "ru": "Спидран: таймер, честная подсветка спавна и ничего, что мешает смотреть на мир."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 12 mods.",
+      "game": "26.3",
+      "categories": [
+        "challenging",
+        "optimization"
+      ],
+      "categoryLabels": [
+        "Challenging",
+        "Optimization"
+      ],
+      "categoryTones": [
+        "orange",
+        "lime"
+      ],
+      "tags": [
+        "speedrun",
+        "timer",
+        "minimal",
+        "singleplayer"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/any_percent.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 40,
+        "pins": 1,
+        "mods": 12,
+        "size_kb": 1
+      },
+      "serverSafe": false,
+      "analog": "Speedrun packs (Set Seed / solo timer setups)",
+      "mods": [
+        {
+          "id": "killc",
+          "version": "5.1.0",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "id": "speedrun_timer",
+          "version": "1.0.1",
+          "license": "MIT"
+        },
+        {
+          "id": "imfast",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "light_overlay",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "hitbox_plus",
+          "version": "1.3.0",
+          "license": "MIT"
+        },
+        {
+          "id": "coords_hud",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "toggle_sprint",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "appleskin_horizon",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "stuck",
+          "version": "1.0.0",
+          "license": "CC-BY-SA-4.0"
+        },
+        {
+          "id": "fps_overlay",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "crosshair_indicator",
+          "version": "1.0.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "any_percent-1.0.0.hpack",
+        "url": "/files/any_percent-1.0.0.hpack",
+        "size": 1093,
+        "sha256": "f6c28ed4c72ddbe84802140cda199370b74e92d5e06436f1ccf5e4eb3e81fc6c"
+      }
+    },
+    {
+      "id": "blackout",
+      "name": "Blackout",
+      "summary": "Dark caves, physics and blood: a survival pack that makes the night matter again.",
+      "description": "Blackout makes vanilla feel less forgiving. Maps, light overlay, fullbright and coordinates are gone, so a cave is dark and a torch is worth carrying. PhysicsModHorizon gives water that never repeats and ragdolls instead of vanishing mobs; Visuality adds pixel particles, Blood Particles adds impact, and motion blur and a living camera add speed. The HUD is cut to armour and the held item. Difficulty stays on vanilla hardcore: the pack adds weight, not bigger numbers.",
+      "localeSummaries": {
+        "en": "Dark caves, physics and blood: a survival pack that makes the night matter again.",
+        "ru": "Тёмное выживание: без карт, без fullbright, без костылей — только звук, волны, кровь и рагдоллы."
+      },
+      "version": "1.0.0",
+      "published": "2026-11-11",
+      "changelog": "First public release — 11 mods.",
+      "game": "26.3",
+      "categories": [
+        "challenging",
+        "adventure"
+      ],
+      "categoryLabels": [
+        "Challenging",
+        "Adventure"
+      ],
+      "categoryTones": [
+        "orange",
+        "blue"
+      ],
+      "tags": [
+        "hardcore",
+        "atmosphere",
+        "survival",
+        "no-crutches"
+      ],
+      "author": "THorizon",
+      "authorGithub": "GetArteCraft",
+      "license": "MIT",
+      "icon": "/icons/packs/blackout.png",
+      "screenshots": [],
+      "requirements": {
+        "game": "26.3",
+        "min_hooks": 411,
+        "pins": 2,
+        "mods": 11,
+        "size_kb": 1
+      },
+      "serverSafe": true,
+      "analog": "Physics Mod + atmosphere packs",
+      "mods": [
+        {
+          "id": "horizon_physics",
+          "version": "0.20.7",
+          "license": "MIT"
+        },
+        {
+          "id": "blood_particles",
+          "version": "1.2.0",
+          "license": "MIT"
+        },
+        {
+          "id": "visuality_horizon",
+          "version": "1.0.2",
+          "license": "MIT"
+        },
+        {
+          "id": "motion_blur",
+          "version": "0.1.0",
+          "license": "MIT"
+        },
+        {
+          "id": "living_camera",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "armor_status",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "trails",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "first_person_body",
+          "version": "1.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "fps_overlay",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "zoom",
+          "version": "2.0.0",
+          "license": "MIT"
+        },
+        {
+          "id": "eatinganimation",
+          "version": "0.2.0",
+          "license": "MIT"
+        }
+      ],
+      "download": {
+        "name": "blackout-1.0.0.hpack",
+        "url": "/files/blackout-1.0.0.hpack",
+        "size": 1052,
+        "sha256": "90a3e9d19dbee7b268bbcec016b8c4aa0f4ff8284e00f12f20d0f40ff6bff02b"
+      }
+    }
+  ]
+}
