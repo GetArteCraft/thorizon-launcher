@@ -3,7 +3,7 @@ productName: THorizon
 copyright: THorizon
 directories:
   output: release
-  buildResources: build
+  buildResources: resources
 files:
   - out/**/*
   - package.json
@@ -15,7 +15,7 @@ compression: maximum
 win:
   target:
     - nsis
-  icon: build/icon.ico
+  icon: icon.ico
   artifactName: THorizon-${version}-${arch}.${ext}
 nsis:
   oneClick: false
@@ -29,7 +29,7 @@ linux:
   target:
     - AppImage
     - deb
-  icon: build/icons
+  icon: icons
   category: Game
   maintainer: THorizon
   artifactName: THorizon-${version}-${arch}.${ext}
@@ -37,7 +37,7 @@ mac:
   target:
     - dmg
   category: public.app-category.games
-  icon: build/icon.icns
+  icon: icon.png
 publish:
   provider: github
   owner: GetArteCraft
