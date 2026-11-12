@@ -62,7 +62,6 @@ export function SettingsScreen() {
   const [cliDraft, setCliDraft] = useState(settings.cliPath);
   const [profilesDraft, setProfilesDraft] = useState(settings.profilesDir);
   const [catalogDraft, setCatalogDraft] = useState(settings.catalogIndexUrl);
-  const [argsError, setArgsError] = useState("");
 
   useEffect(() => {
     setCliDraft(settings.cliPath);
@@ -285,12 +284,6 @@ export function SettingsScreen() {
               <SettingRow title={t("settings.hardwareAcceleration")} body={t("settings.hardwareAccelerationBody")}>
                 <Toggle checked={settings.hardwareAcceleration} onChange={(value) => void save({ hardwareAcceleration: value })} label={t("settings.hardwareAcceleration")} />
               </SettingRow>
-              <SettingRow title={t("settings.parallelDownloads")}>
-                <div className="range-row">
-                  <Range value={settings.parallelDownloads} min={1} max={8} onChange={(value) => void save({ parallelDownloads: value })} label={t("settings.parallelDownloads")} />
-                  <span className="mono">{settings.parallelDownloads}</span>
-                </div>
-              </SettingRow>
               <SettingRow title={t("settings.speedLimit")}>
                 <TextInput
                   type="number"
@@ -322,19 +315,6 @@ export function SettingsScreen() {
                   <TextInput type="number" min={480} max={4320} value={settings.launchHeight} onChange={(event) => void save({ launchHeight: Number(event.target.value) })} />
                 </div>
               </SettingRow>
-              <SettingRow title={t("settings.launchArgs")} body={t("settings.launchArgsBody")}>
-                <TextInput
-                  value={settings.launchArgs}
-                  onChange={(event) => {
-                    const value = event.target.value;
-                    setArgsError(/["%]/.test(value) ? t("settings.invalidArgs") : "");
-                    if (!/["%]/.test(value)) void save({ launchArgs: value });
-                  }}
-                  placeholder="—"
-                  className={argsError ? "input--error" : ""}
-                />
-              </SettingRow>
-              {argsError ? <p className="form-error">{argsError}</p> : null}
               <SettingRow title={t("settings.defaultProfile")}>
                 <Select value={settings.defaultProfile ?? ""} onChange={(event) => void save({ defaultProfile: event.target.value || null })}>
                   <option value="">—</option>
@@ -400,12 +380,10 @@ export function SettingsScreen() {
 
           {section === "privacy" ? (
             <Panel title={t("settings.section.privacy")}>
-              <SettingRow title={t("settings.telemetry")} body={t("settings.telemetryBody")}>
-                <Toggle checked={settings.telemetryEnabled} onChange={(value) => void save({ telemetryEnabled: value })} label={t("settings.telemetry")} />
-              </SettingRow>
-              <SettingRow title={t("settings.crashReports")} body={t("settings.crashReportsBody")}>
-                <Toggle checked={settings.crashReports} onChange={(value) => void save({ crashReports: value })} label={t("settings.crashReports")} />
-              </SettingRow>
+              <div className="notice">
+                <Icon name="shield" size={16} />
+                <span>{t("diagnostics.telemetryOff")} {t("diagnostics.statsNote")}</span>
+              </div>
               <SettingRow title={t("settings.logLevel")}>
                 <Select value={settings.logLevel} onChange={(event) => void save({ logLevel: event.target.value as Settings["logLevel"] })}>
                   <option value="error">error</option>
@@ -416,7 +394,7 @@ export function SettingsScreen() {
               </SettingRow>
               <div className="notice">
                 <Icon name="shield" size={16} />
-                <span>{settings.telemetryEnabled ? t("diagnostics.telemetryFields") : t("diagnostics.telemetryOff")}</span>
+                <span>{t("diagnostics.telemetryFields")}</span>
               </div>
             </Panel>
           ) : null}

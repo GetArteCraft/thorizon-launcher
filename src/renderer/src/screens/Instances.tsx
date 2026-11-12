@@ -37,7 +37,6 @@ export function InstancesScreen() {
   const [launchMode, setLaunchMode] = useState(settings.launchMode);
   const [width, setWidth] = useState(settings.launchWidth);
   const [height, setHeight] = useState(settings.launchHeight);
-  const [args, setArgs] = useState(settings.launchArgs);
   const [hide, setHide] = useState(settings.hideLauncherOnPlay);
   const [busy, setBusy] = useState(false);
 
@@ -87,7 +86,6 @@ export function InstancesScreen() {
     setLaunchMode(profile.launch?.launchMode ?? settings.launchMode);
     setWidth(profile.launch?.launchWidth ?? settings.launchWidth);
     setHeight(profile.launch?.launchHeight ?? settings.launchHeight);
-    setArgs(profile.launch?.launchArgs ?? settings.launchArgs);
     setHide(profile.launch?.hideLauncherOnPlay ?? settings.hideLauncherOnPlay);
   };
 
@@ -119,17 +117,13 @@ export function InstancesScreen() {
 
   const saveLaunch = async () => {
     if (!api || !editing) return;
-    if (/["%]/.test(args)) {
-      toast("error", t("settings.invalidArgs"));
-      return;
-    }
     setBusy(true);
     try {
       await api.profilesUpdateLaunch(editing.id, {
         launchMode,
         launchWidth: width,
         launchHeight: height,
-        launchArgs: args,
+        launchArgs: editing.launch?.launchArgs ?? settings.launchArgs,
         hideLauncherOnPlay: hide,
       });
       setEditing(null);
@@ -276,9 +270,6 @@ export function InstancesScreen() {
           </Field>
           <Field label={t("settings.launchHeight")}>
             <TextInput type="number" value={height} min={480} max={4320} onChange={(event) => setHeight(Number(event.target.value))} />
-          </Field>
-          <Field label={t("settings.launchArgs")} hint={t("settings.launchArgsBody")} className="field--wide">
-            <TextInput value={args} onChange={(event) => setArgs(event.target.value)} placeholder="—" />
           </Field>
           <div className="field field--wide setting-inline">
             <span>{t("settings.hideLauncherOnPlay")}</span>
